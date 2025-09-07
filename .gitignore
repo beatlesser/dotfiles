@@ -1,0 +1,9 @@
+*
+!fish/
+!fish/**
+!kitty/
+!kitty/**
+!nvim/
+!nvim/**
+!starship.toml
+!README.md
