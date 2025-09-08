@@ -11,6 +11,9 @@ if status is-interactive # Commands to run in interactive sessions can go here
     # No greeting
     set fish_greeting
 
+    # Set default editor 
+    set -gx EDITOR nvim
+
     #fzf integration
     fzf --fish | source
 
@@ -18,4 +21,3 @@ if status is-interactive # Commands to run in interactive sessions can go here
     starship init fish | source
 end
 
-set -gx EDITOR nvim
