@@ -17,7 +17,14 @@ if status is-interactive # Commands to run in interactive sessions can go here
     #fzf integration
     fzf --fish | source
 
+    #zoxide integration
+    zoxide init fish | source
+
     # Use starship
     starship init fish | source
+
+    #alias
+    alias vi 'nvim'
+    
 end
 
