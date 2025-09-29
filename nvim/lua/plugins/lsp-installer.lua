@@ -62,8 +62,8 @@ local Mason = {
 	config = function()
 		require("mason").setup(MasonOpt)
 		ensure_installed({
-			"lua-language-server",
-			"stylua",
+			--"lua-language-server",
+			--"stylua",
 		})
 	end,
 }

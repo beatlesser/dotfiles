@@ -3,59 +3,31 @@
 local DiagnosticConfig = {}
 
 DiagnosticConfig.apply = function()
-    local mocha = require('catppuccin.palettes').get_palette 'mocha'
-    for type, icon in pairs {
-        Error = ' ',
-        Warn = ' ',
-        Info = ' ',
-        Hint = ' ',
-    } do
-        local hl = 'DiagnosticSign' .. type
-        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
-    end
-
-    vim.opt.signcolumn = 'auto'
-    vim.diagnostic.config {
-        signs = { priority = 5 },
-        virtual_text = false,
-        underline = true,
-    }
-
-    vim.api.nvim_set_hl(0, 'DiagnosticSignError', { fg = mocha.red })
-    vim.api.nvim_set_hl(0, 'DiagnosticSignWarn', { fg = mocha.yellow })
-
     -- diagnostic info
     vim.diagnostic.config {
-        virtual_text = false,
-        virtual_lines = {
-            only_current_line = true,
-            -- severity = { min = vim.diagnostic.severity.WARN }
+    -- virtual_lines = { current_line = true },
+      virtual_text = {
+        spacing = 5,
+        prefix = '◍ ',
+      },
+      float = { severity_sort = true },
+      severity_sort = true,
+      signs = {
+        text = {
+          -- [vim.diagnostic.severity.ERROR] = '',
+          [vim.diagnostic.severity.ERROR] = '',
+          [vim.diagnostic.severity.WARN] = '',
+          [vim.diagnostic.severity.INFO] = '',
+          [vim.diagnostic.severity.HINT] = '',
         },
-        underline = true,
-        signs = true,
-        update_in_insert = false,
-        float = {
-            border = 'rounded',
-            header = '',
-            source = true,
-            -- prefix = function(diag)
-            --   local icons = require("core.icons").diagnostics
-            --   return icons[diag.severity] .. " "
-            -- end
+        numhl = {
+          [vim.diagnostic.severity.ERROR] = 'DiagnosticError',
+          [vim.diagnostic.severity.WARN] = 'DiagnosticWarning',
+          [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
+          [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
         },
+      },
     }
-
-    -- auto update diagnostic info
-    vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-        callback = function()
-            vim.diagnostic.show(nil, 0, nil, { virtual_lines = { only_current_line = true } })
-        end,
-    })
-
-    -- Hover diagnostics
-    vim.keymap.set('n', '<Leader>ld', function()
-        vim.diagnostic.open_float()
-    end, { desc = 'Hover diagnostics' })
 end
 
 return DiagnosticConfig
