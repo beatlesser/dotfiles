@@ -6,6 +6,8 @@ vim.api.nvim_create_autocmd('User', {
                 require('configs.options').apply()
                 require('configs.keymaps').apply()
                 require('configs.autocmds').apply()
+                require('configs.diagnostics').apply()
+                require('configs.lsp').apply() 
             end)
 	end
 })
