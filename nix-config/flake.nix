@@ -1,6 +1,26 @@
 {
   description = "NixOS Config For Beatlesser";
 
+  # the nixConfig here only affects the flake itself, not the system configuration!
+  nixConfig = {
+    # override the default substituters
+    substituters = [
+      # cache mirror located in China
+      # status: https://mirror.sjtu.edu.cn/
+      #"https://mirror.sjtu.edu.cn/nix-channels/store"
+      # status: https://mirrors.ustc.edu.cn/status/
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+
+      "https://cache.nixos.org"
+
+      # nix community's cache server
+      "https://nix-community.cachix.org"
+    ];
+    trusted-public-keys = [
+      # nix community's cache server public key
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
 
   inputs = {
     # Nixpkgs
@@ -25,8 +45,8 @@
     };
     #nix-output-monitor
     nix-output-monitor = {
-        url = "github:maralorn/nix-output-monitor/main";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:maralorn/nix-output-monitor/main";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -34,7 +54,7 @@
     self,
     nixpkgs,
     ...
-  }@inputs: let
+  } @ inputs: let
     # Supported systems for your flake packages, shell, etc.
     systems = [
       "aarch64-linux"
