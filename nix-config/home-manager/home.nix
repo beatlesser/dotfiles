@@ -76,7 +76,7 @@
     pkg-config
   ];
   xdg.configFile."nvim" = {
-  	source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
+  	source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/nvim";
   };
 
   # Nicely reload system units when changing configs
