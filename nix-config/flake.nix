@@ -11,7 +11,7 @@
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/master";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # NixOS-WSL
@@ -34,7 +34,7 @@
     self,
     nixpkgs,
     ...
-  } @ inputs: let
+  }@inputs: let
     # Supported systems for your flake packages, shell, etc.
     systems = [
       "aarch64-linux"
@@ -43,12 +43,12 @@
     genSpecialArgs = system:
       inputs
       // {
-        pkgs-stable = import inputs.pkgs {
+        pkgs-stable = import inputs.nixpkgs {
           inherit system;
 
           config.allowUnfree = true;
         };
-        pkgs-unstable = import inputs.pkgs-unstable {
+        pkgs-unstable = import inputs.nixpkgs-unstable {
           inherit system;
 
           config.allowUnfree = true;
@@ -62,15 +62,10 @@
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
-    # Your custom packages
-    # Accessible through 'nix build', 'nix shell', etc
-    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
-    # Your custom packages and modifications, exported as overlays
-    overlays = import ./overlays {inherit inputs;};
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {

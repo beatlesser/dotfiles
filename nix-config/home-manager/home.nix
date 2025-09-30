@@ -39,7 +39,6 @@
 
 	neovim = {
 		enable = true;
-        packages = pkgs.neovim-unwarapped;
 	};
 
 	starship = {
@@ -70,11 +69,7 @@
     gawk
     zstd
     gnupg
-
-    gcc
-    gnumake
-    pkg-config
-  ];
+ ];
   xdg.configFile."nvim" = {
   	source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/nvim";
   };
