@@ -75,7 +75,7 @@
         specialArgs = genSpecialArgs system;
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/configuration.nix
+          ./system/configuration.nix
           inputs.nixos-wsl.nixosModules.wsl
           inputs.home-manager.nixosModules.home-manager
           {
