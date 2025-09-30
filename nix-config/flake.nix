@@ -95,7 +95,7 @@
           inputs.nixos-wsl.nixosModules.wsl
           inputs.home-manager.nixosModules.home-manager
           {
-            home-manager.users.cyer = import ./home-manager/home.nix;
+            home-manager.users.cyer = import ./home;
             home-manager.extraSpecialArgs = genSpecialArgs system;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

@@ -1,7 +1,7 @@
 {lib, ...}: {
   relativeToRootPath = lib.path.append ../.;
 
-  scanPath = prefix:
+  collectPaths = prefix:
     builtins.map (path: (prefix + "/${path}")) (
       builtins.attrNames (
         lib.attrsets.filterAttrs (
