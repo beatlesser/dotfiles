@@ -5,7 +5,7 @@
     enableZshIntegration = true;
     enableFishIntegration = true;
 
-    settings =  {
+    settings = {
       "$schema" = "https://starship.rs/config-schema.json";
       add_newline = false;
       format = lib.concatStrings [
@@ -56,14 +56,14 @@
       };
 
       git_branch = {
-          disabled = false;
+        disabled = false;
         symbol = "";
         style = "bg:#394260";
         format = "[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)";
       };
 
       git_status = {
-          disabled = false;
+        disabled = false;
         style = "bg:#394260";
         format = "[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)";
       };

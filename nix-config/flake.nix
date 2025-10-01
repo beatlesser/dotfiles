@@ -21,12 +21,6 @@
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
     };
-
-    #huamea: change your files into attrsets
-    haumea = {
-      url = "github:nix-community/haumea/v0.2.2";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     #nix-output-monitor
     nix-output-monitor = {
       url = "github:maralorn/nix-output-monitor/main";
