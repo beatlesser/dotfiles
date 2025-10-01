@@ -1,17 +1,17 @@
 {
   pkgs,
   inputs,
-  username,
   ...
-}:
-{
+}: let
+  inherit (import ./vars.nix) username;
+in {
   nixpkgs = {
     config.allowUnfree = true;
   };
   # Cachix, Optimization settings and garbage collection automation
   nix = {
     package = pkgs.lix;
-    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     channel.enable = true;
     extraOptions = ''
       warn-dirty = false
@@ -44,4 +44,3 @@
     };
   };
 }
-
