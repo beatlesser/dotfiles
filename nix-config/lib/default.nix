@@ -1,4 +1,4 @@
-{lib, ...}: rec {
+{lib, ...}: let
   excludePaths = [
     "default.nix"
     "vars.nix"
@@ -12,6 +12,6 @@
     builtins.attrNames (
       lib.filterAttrs pathFilter (builtins.readDir dir)
     );
-
-  genImports = dir: builtins.map(path: (dir + "/${path}")) (genPaths dir);
+in {
+  genImports = dir: builtins.map (path: (dir + "/${path}")) (genPaths dir);
 }
