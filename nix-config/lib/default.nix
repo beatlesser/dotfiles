@@ -5,7 +5,7 @@
     builtins.map (path: (prefix + "/${path}")) (
       builtins.attrNames (
         lib.attrsets.filterAttrs (
-          path:fileType: (
+          path: fileType: (
             (fileType == "directory") #include directory
             || (
               (path != "default.nix")

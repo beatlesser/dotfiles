@@ -19,8 +19,7 @@
 
     #flake-parts: better flake config
     flake-parts = {
-      url = "github:github:hercules-ci/flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hercules-ci/flake-parts";
     };
 
     #huamea: change your files into attrsets
@@ -77,21 +76,21 @@
           };
         in
           builtins.mapAttrs (
-            host:cfg:
-            nixpkgs.lib.nixosSystem {
-              inherit (cfg) system;
-              specialArgs =
-                {
-                  inherit inputs;
-                  inherit myLib;
-                  inherit (cfg) username system;
-                }
-                // mkPkgs cfg.system;
-              modules = [
-                "./hosts/${host}"
-                "./overlays"
-              ];
-            }
+            host: cfg:
+              nixpkgs.lib.nixosSystem {
+                inherit (cfg) system;
+                specialArgs =
+                  {
+                    inherit inputs;
+                    inherit myLib;
+                    inherit (cfg) username system;
+                  }
+                  // mkPkgs cfg.system;
+                modules = [
+                  "./hosts/${host}"
+                  "./overlays"
+                ];
+              }
           )
           hosts;
       };
