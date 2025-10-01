@@ -3,10 +3,11 @@
   myLib,
   inputs,
   system,
-  username,
   stable,
   ...
-}: {
+}: let
+  inherit (import ./vars.nix) username;
+in {
   imports = [inputs.home-manager.nixosModules.home-manager];
   home-manager = {
     useUserPackages = true;
@@ -16,7 +17,6 @@
       inherit
         inputs
         myLib
-        username
         system
         stable
         ;
@@ -30,7 +30,6 @@
         username = "${username}";
         homeDirectory = lib.mkForce "/home/${username}";
         stateVersion = "25.05";
-        enableNixpkgsReleaseCheck = false;
       };
     };
   };

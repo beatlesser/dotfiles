@@ -1,10 +1,9 @@
 {
   stable,
-  username,
   ...
 }:
 let
-  inherit (import ./variables.nix) shell;
+  inherit (import ./vars.nix) username shell;
 in
 {
   users = {

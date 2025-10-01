@@ -1,8 +1,9 @@
-{pkgs,username, ...}: {
+{pkgs, ...}: let
+  inherit (import ./vars.nix) username;
+in {
   #wsl setting
   wsl.enable = true;
   wsl.defaultUser = "${username}";
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

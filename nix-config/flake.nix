@@ -18,14 +18,7 @@
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
 
     #flake-parts: better flake config
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-    };
-    #nix-output-monitor
-    nix-output-monitor = {
-      url = "github:maralorn/nix-output-monitor/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
   outputs = {
     nixpkgs,
@@ -34,17 +27,14 @@
     flake-parts,
     ...
   } @ inputs: let
-    #add sytems which you want to support
     myLib = import ./lib {inherit (nixpkgs) lib;};
+    #add sytems which you want to support
     systems = [
       "x86_64-linux"
     ];
     #add your host info here
     hosts = {
-      wsl = {
-        system = "x86_64-linux";
-        username = "cyer";
-      };
+      wsl = "x86_64-linux";
     };
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
@@ -55,6 +45,8 @@
         lib,
         ...
       }: {
+        packages = import ./pkgs {inherit pkgs system myLib;};
+        formatter = pkgs.legacyPackages.${system}.alejandra;
       };
       flake = {
         nixosConfigurations = let
@@ -70,20 +62,22 @@
           };
         in
           builtins.mapAttrs (
-            host: cfg:
+            host: system:
               nixpkgs.lib.nixosSystem {
-                inherit (cfg) system;
+                inherit system;
                 specialArgs =
                   {
                     inherit inputs;
                     inherit host;
                     inherit (nixpkgs) lib;
                     inherit myLib;
-                    inherit (cfg) username system;
+                    inherit system;
                   }
-                  // mkPkgs cfg.system;
+                  // mkPkgs system;
                 modules = [
+                  #add your hosts module here
                   ./hosts/${host}
+                  #add your overlays pkgs here
                   ./overlays
                 ];
               }

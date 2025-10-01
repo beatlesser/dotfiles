@@ -1,7 +1,7 @@
 {lib, ...}: rec {
   excludePaths = [
     "default.nix"
-    "variables.nix"
+    "vars.nix"
   ];
 
   pathFilter = path: _type:

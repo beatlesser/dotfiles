@@ -1,10 +1,9 @@
 {stable,...}: {
   programs = {
-    fish.enable = true;
+    zsh.enable = true;
     zoxide = {
       enable = true;
       enableZshIntegration = true;
-      enableFishIntegration = true;
     };
   };
 

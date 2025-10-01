@@ -2,7 +2,7 @@
   ...
 }:
 let
-  inherit (import ./variables.nix)
+  inherit (import ./vars.nix)
     timeZone
     keyboardLayout
     defaultLocale
