@@ -1,6 +1,6 @@
 {
   lib,
-      myLib,
+  myLib,
   inputs,
   system,
   username,
@@ -22,6 +22,7 @@
         ;
     };
     users.${username} = {
+      programs.home-manager.enable = true;
       imports = [
         ../../home/${username}
       ];
@@ -31,7 +32,6 @@
         stateVersion = "25.05";
         enableNixpkgsReleaseCheck = false;
       };
-      programs.home-manager.enable = true;
     };
   };
 }
