@@ -36,12 +36,12 @@
   outputs = {
     nixpkgs,
     nixpkgs-unstable,
+    nixos-wsl,
     flake-parts,
-    lib,
     ...
   } @ inputs: let
     #add sytems which you want to support
-    myLib = import ./lib {inherit lib;};
+    myLib = import ./lib {inherit (nixpkgs) lib;};
     systems = [
       "x86_64-linux"
     ];
@@ -53,7 +53,7 @@
       };
     };
   in
-    flake-parts.lib.mkflake {inherit inputs;} {
+    flake-parts.lib.mkFlake {inherit inputs;} {
       inherit systems;
       perSystem = {
         system,
@@ -82,13 +82,14 @@
                 specialArgs =
                   {
                     inherit inputs;
+                    inherit (nixpkgs) lib;
                     inherit myLib;
                     inherit (cfg) username system;
                   }
                   // mkPkgs cfg.system;
                 modules = [
-                  "./hosts/${host}"
-                  "./overlays"
+                  ./hosts/${host}
+                  ./overlays
                 ];
               }
           )

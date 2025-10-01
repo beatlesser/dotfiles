@@ -1,18 +1,17 @@
-{lib, ...}: {
-  relativeToRootPath = lib.path.append ../.;
+{lib, ...}: rec {
+  excludePaths = [
+    "default.nix"
+    "variables.nix"
+  ];
 
-  collectPaths = prefix:
-    builtins.map (path: (prefix + "/${path}")) (
-      builtins.attrNames (
-        lib.attrsets.filterAttrs (
-          path: fileType: (
-            (fileType == "directory") #include directory
-            || (
-              (path != "default.nix")
-              && (lib.strings.hasSuffix ".nix") #include .nix files
-            )
-          )
-        )
-      ) (builtins.readDir prefix)
+  pathFilter = path: _type:
+    (_type == "directory")
+    || (!(builtins.elem path excludePaths) && lib.strings.hasSuffix ".nix" path);
+
+  genPaths = dir:
+    builtins.attrNames (
+      lib.filterAttrs pathFilter (builtins.readDir dir)
     );
+
+  genImports = dir: builtins.map(path: (dir + "/${path}")) (genPaths dir);
 }

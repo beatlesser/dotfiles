@@ -1,3 +1,3 @@
 {myLib,...}:{
-    imports = myLib.collectPaths ./.; 
+    imports = myLib.genImports ./.; 
 }

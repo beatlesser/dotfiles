@@ -1,5 +1,6 @@
 {
   lib,
+      myLib,
   inputs,
   system,
   username,
@@ -14,6 +15,7 @@
     extraSpecialArgs = {
       inherit
         inputs
+        myLib
         username
         system
         stable

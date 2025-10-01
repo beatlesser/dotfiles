@@ -12,8 +12,6 @@
   keyboardLayout = "us";
   shell = "fish"; # fish or zsh
 
-  autoGarbage = true; # nh autoUpgrade
-
   timeZone = "Asia/Shanghai";
 
   defaultLocale = "en_US.UTF-8";
