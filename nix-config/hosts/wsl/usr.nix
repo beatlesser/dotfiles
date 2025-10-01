@@ -26,7 +26,7 @@ in
         "input"
         "audio"
       ];
-      useDefaultShell = stable.${shell};
+      shell = stable.${shell};
       packages = with stable; [ tree ];
     };
     defaultUserShell = stable.zsh;
