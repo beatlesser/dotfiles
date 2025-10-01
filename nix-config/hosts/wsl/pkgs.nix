@@ -1,4 +1,4 @@
-{stable,...}: {
+{stable, ...}: {
   programs = {
     zsh.enable = true;
     zoxide = {
