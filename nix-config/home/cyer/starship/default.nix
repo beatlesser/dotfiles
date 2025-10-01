@@ -1,9 +1,8 @@
 {
   config,
-  lib,
   ...
 }: {
   programs.starship.enable = true;
 
-  xdg.configFile.source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/starship.toml";
+  xdg.configFile.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/starship.toml";
 }
