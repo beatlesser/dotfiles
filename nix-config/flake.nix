@@ -82,6 +82,7 @@
                 specialArgs =
                   {
                     inherit inputs;
+                    inherit host;
                     inherit (nixpkgs) lib;
                     inherit myLib;
                     inherit (cfg) username system;
