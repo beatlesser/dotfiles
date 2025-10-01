@@ -4,5 +4,5 @@
 }: {
   programs.starship.enable = true;
 
-  xdg.configFile.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/starship.toml";
+  xdg.configFile."starship.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/starship.toml";
 }
