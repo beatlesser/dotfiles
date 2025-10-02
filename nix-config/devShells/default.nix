@@ -24,14 +24,13 @@
     go = ["go"];
     c = ["c"];
   };
-  extrasPkgs = with stable; [
-    fish
-  ];
-
   loadModules = moduleList: let
+    extraPkgs = with stable; [
+        fish
+    ];
     imported = map (name: import ./${name}.nix {inherit stable unstable;}) moduleList;
   in {
-    packages = lib.flatten (map (m: m.packages or []) imported) ++ extrasPkgs;
+    packages = lib.flatten (map (m: m.packages or []) imported) ++ extraPkgs;
     nativeBuildInputs = lib.flatten (map (m: m.nativeBuildInputs or []) imported);
     propagatedBuildInputs = lib.flatten (map (m: m.propagatedBuildInputs or []) imported);
     propagatedNativeBuildInputs = lib.flatten (
@@ -54,6 +53,7 @@ in
         inputsFrom = s.inputsFrom;
 
         shellHook = ''
+          eval fish
           ${s.shellHook}
           ${builtins.concatStringsSep "\n" (
             map (k: "export ${k}=\"${s.env.${k}}\"") (builtins.attrNames s.env)
