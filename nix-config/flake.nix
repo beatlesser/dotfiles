@@ -63,7 +63,7 @@
         lib,
         ...
       }: {
-        devShells = import ./dev-env {
+        devShells = import ./dev {
           inherit (mkPkgs system) stable unstable;
           inherit lib;
         };
