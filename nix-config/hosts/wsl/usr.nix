@@ -16,7 +16,6 @@ in
       homeMode = "755";
       isNormalUser = true;
       description = "${username}";
-      # group = "${username}";
       extraGroups = [
         "networkmanager"
         "wheel"
@@ -29,6 +28,6 @@ in
       shell = stable.${shell};
       packages = with stable; [ tree ];
     };
-    defaultUserShell = stable.zsh;
+    defaultUserShell = stable.bash;
   };
  }
