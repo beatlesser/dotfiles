@@ -1,6 +1,5 @@
 {stable, ...}: {
   programs = {
-    bash.enable = true;
     fish.enable = true;
     zoxide = {
       enable = true;
