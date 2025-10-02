@@ -24,7 +24,9 @@
     go = ["go"];
     c = ["c"];
   };
-  extrasPkgs = ["fish"];
+  extrasPkgs = with stable; [
+    fish
+  ];
 
   loadModules = moduleList: let
     imported = map (name: import ./${name}.nix {inherit stable unstable;}) moduleList;
