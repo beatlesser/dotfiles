@@ -47,9 +47,10 @@
         system,
         pkgs,
         lib,
+        unstable,
         ...
       }: {
-        devShells = import ./devShells {inherit pkgs;};
+        devShells = import ./devShells {inherit unstable;};
         packages = import ./pkgs {inherit pkgs system myLib;};
         formatter = pkgs.legacyPackages.${system}.alejandra;
       };

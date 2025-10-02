@@ -1,10 +1,7 @@
-{ pkgs, ... }:
-
-{
+{unstable, ...}: {
   packages = (
-    with pkgs;
-    [
-    go
+    with unstable; [
+      go
       gotools # goimports, godoc, etc.
       golangci-lint # https://github.com/golangci/golangci-lint
     ]
