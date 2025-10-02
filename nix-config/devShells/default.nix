@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs,unstable, ... }:
 
 let
   modules = {
@@ -25,7 +25,7 @@ let
   loadModules =
     moduleList:
     let
-      imported = map (name: import ./${name}.nix { inherit pkgs; }) moduleList;
+      imported = map (name: import ./${name}.nix { inherit pkgs unstable; }) moduleList;
     in
     {
       packages = pkgs.lib.flatten (map (m: m.packages or [ ]) imported);
