@@ -3,15 +3,23 @@ set positional-arguments
 @default:
     just --list
 
+[linux]
+[group('nix')]
 @init:
     nix run github:nix-community/nix-init
 
+[linux]
+[group('nix')]
 @up:
     nix flake update --commit-lock-file
 
+[linux]
+[group('nix')]
 @clean:
     sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d
 
+[linux]
+[group('nix')]
 @gc:
     sudo nix-collect-garbage --delete-older-than 7d
 
@@ -24,20 +32,32 @@ sh *pkgs = "git neovim":
     set -euxo pipefail
     source scripts/prefix.sh "$@"
 
-@dev *env="dev":
+[linux]
+[group('nix')]
+@dev env="dev":
     nix develop .#{{ env }}
 
-@deploy target="wsl":
-    sudo nixos-rebuild switch --flake .#{{ target }}
+[linux]
+[group('nix')]
+@deploy host="wsl":
+    sudo nixos-rebuild switch --flake .#{{ host }}
 
+[linux]
+[group('nix')]
 @fix:
     nix-store --repair --verify # --check-contents
 
+[linux]
+[group('nix')]
 @genfacter:
     nix run github:numtide/nixos-facter -- -o facter.json
 
-@fast-deploy target="wsl":
+[linux]
+[group('nix')]
+@fast-deploy host="wsl":
     nix run github:Mic92/nix-fast-build -- --flake .#nixosConfigurations.{{ target }}.config.system.build.toplevel --skip-cached --eval-max-memory-size 15360
 
-@fast-build target="":
+[linux]
+[group('nix')]
+@fast-build pkg="":
     nix run github:Mic92/nix-fast-build -- --flake .#packages.x86_64-linux.{{ target }} --eval-max-memory-size 15360
