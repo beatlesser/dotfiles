@@ -1,2 +1,27 @@
-recipe-name:
-    echo 'This is a recipe!'
+@default:
+    just --list
+
+@up:
+    nix flake update --commit-lock-file
+
+@clean:
+    sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d
+
+    nix profile wipe-history --profile $"($env.XDG_STATE_HOME)/nix/profiles/home-manager" --older-than 7d
+
+@gc:
+    sudo nix-collect-garbage --delete-older-than 7d
+
+    nix-collect-garbage --delete-older-than 7d
+
+@build target="wsl":
+    sudo nixos-rebuild switch --flake .#{{ tartget }}
+
+@init:
+    nix run github:nix-community/nix-init
+
+@fast-build-system target="wsl":
+    nix run github:Mic92/nix-fast-build -- --flake .#nixosConfigurations.{{ target }}.config.system.build.toplevel --skip-cached --eval-workers 2 --eval-max-memory-size 15360
+
+@fast-build-package target="":
+    nix run github:Mic92/nix-fast-build -- --flake .#packages.x86_64-linux.{{ target }} --eval-max-memory-size 15360
