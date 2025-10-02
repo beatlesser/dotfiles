@@ -47,10 +47,15 @@
         system,
         pkgs,
         lib,
-        unstable,
         ...
       }: {
-        devShells = import ./devShells {inherit unstable pkgs;};
+        devShells = import ./devShells {
+          inherit pkgs;
+          unstable = import nixpkgs-unstable {
+            inherit system;
+            allowUnfree = true;
+          };
+        };
         packages = import ./pkgs {inherit pkgs system myLib;};
         formatter = pkgs.legacyPackages.${system}.alejandra;
       };
@@ -87,7 +92,7 @@
                   ./overlays
                   {
                     nixpkgs.overlays = [
-                        nur.overlays.default
+                      nur.overlays.default
                     ];
                   }
                 ];
