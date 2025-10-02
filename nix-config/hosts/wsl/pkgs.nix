@@ -27,6 +27,7 @@
       file
       dos2unix
       just
+      zig
       git
 
       cliphist # 管理和查看剪贴板历史记录
