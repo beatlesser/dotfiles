@@ -1,4 +1,4 @@
-{ pkgs,unstable, ... }:
+{ lib,stable,unstable, ... }:
 
 let
   modules = {
@@ -25,16 +25,16 @@ let
   loadModules =
     moduleList:
     let
-      imported = map (name: import ./${name}.nix { inherit pkgs unstable; }) moduleList;
+      imported = map (name: import ./${name}.nix { inherit stable unstable; }) moduleList;
     in
     {
-      packages = pkgs.lib.flatten (map (m: m.packages or [ ]) imported);
-      nativeBuildInputs = pkgs.lib.flatten (map (m: m.nativeBuildInputs or [ ]) imported);
-      propagatedBuildInputs = pkgs.lib.flatten (map (m: m.propagatedBuildInputs or [ ]) imported);
-      propagatedNativeBuildInputs = pkgs.lib.flatten (
+      packages = lib.flatten (map (m: m.packages or [ ]) imported);
+      nativeBuildInputs = lib.flatten (map (m: m.nativeBuildInputs or [ ]) imported);
+      propagatedBuildInputs = lib.flatten (map (m: m.propagatedBuildInputs or [ ]) imported);
+      propagatedNativeBuildInputs = lib.flatten (
         map (m: m.propagatedNativeBuildInputs or [ ]) imported
       );
-      inputsFrom = pkgs.lib.flatten (map (m: m.inputsFrom or [ ]) imported);
+      inputsFrom = lib.flatten (map (m: m.inputsFrom or [ ]) imported);
       env = builtins.foldl' (acc: m: acc // (m.env or { })) { } imported;
       shellHook = builtins.concatStringsSep "\n" (map (m: m.shellHook or "") imported);
     };
@@ -44,7 +44,7 @@ let
 in
 builtins.mapAttrs (
   name: s:
-  pkgs.mkShell {
+  stable.mkShell {
     buildInputs = s.packages;
     nativeBuildInputs = s.nativeBuildInputs;
     propagatedBuildInputs = s.propagatedBuildInputs;

@@ -32,6 +32,17 @@
     ...
   } @ inputs: let
     myLib = import ./lib {inherit (nixpkgs) lib;};
+    # make diffrent pkgs instance for you want
+    mkPkgs = system: {
+      stable = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    };
     #add sytems which you want to support
     systems = [
       "x86_64-linux"
@@ -50,28 +61,14 @@
         ...
       }: {
         devShells = import ./devShells {
-          inherit pkgs;
-          unstable = import nixpkgs-unstable {
-            inherit system;
-            allowUnfree = true;
-          };
+          inherit (mkPkgs system) stable unstable; 
+          inherit lib;
         };
         packages = import ./pkgs {inherit pkgs system myLib;};
         formatter = pkgs.legacyPackages.${system}.alejandra;
       };
       flake = {
-        nixosConfigurations = let
-          mkPkgs = system: {
-            stable = import nixpkgs {
-              inherit system;
-              config.allowUnfree = true;
-            };
-            unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          };
-        in
+        nixosConfigurations =
           builtins.mapAttrs (
             host: system:
               nixpkgs.lib.nixosSystem {
