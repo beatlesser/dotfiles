@@ -1,6 +1,9 @@
 @default:
     just --list
 
+@init:
+    nix run github:nix-community/nix-init
+
 @up:
     nix flake update --commit-lock-file
 
@@ -15,10 +18,13 @@
     nix-collect-garbage --delete-older-than 7d
 
 @build target="wsl":
-    sudo nixos-rebuild switch --flake .#{{ tartget }}
+    sudo nixos-rebuild switch --flake .#{{ target }}
 
-@init:
-    nix run github:nix-community/nix-init
+@fix:
+    nix-store --repair --verify # --check-contents
+
+@genfacter:
+    nix run github:numtide/nixos-facter -- -o facter.json
 
 @fast-build-system target="wsl":
     nix run github:Mic92/nix-fast-build -- --flake .#nixosConfigurations.{{ target }}.config.system.build.toplevel --skip-cached --eval-workers 2 --eval-max-memory-size 15360
