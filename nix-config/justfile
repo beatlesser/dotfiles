@@ -55,7 +55,7 @@ sh *pkgs = "git neovim":
 [linux]
 [group('nix')]
 @fast-deploy host="wsl":
-    nix run github:Mic92/nix-fast-build -- --flake .#nixosConfigurations.{{ host }}.config.system.build.toplevel --skip-cached --eval-workers 2 --eval-max-memory-size 15360
+    nix run github:Mic92/nix-fast-build -- --flake .#nixosConfigurations.{{ host }}.config.system.build.toplevel --skip-cached --eval-workers 4 --eval-max-memory-size 15360
 
 [linux]
 [group('nix')]
