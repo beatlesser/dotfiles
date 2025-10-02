@@ -1,23 +1,23 @@
-{ pkgs, ... }:
-pkgs.mkShell {
+{ unstable, ... }:
+unstable.mkShell {
   buildInputs =
     # --- Node.js/JS ---
-    (with pkgs; [
+    (with unstable; [
       nodejs_22
       node2nix
     ])
-    ++ (with pkgs.nodePackages; [
+    ++ (with unstable.nodePackages; [
       yarn
       pnpm
       eslint_d
     ])
     ++
       # --- Python ---
-      (with pkgs; [
+      (with unstable; [
         python312
         pyright
       ])
-    ++ (with pkgs.python312Packages; [
+    ++ (with unstable.python312Packages; [
       uv
       requests
       pyquery
@@ -26,7 +26,7 @@ pkgs.mkShell {
     ])
     ++
       # --- C/C++ ---
-      (with pkgs; [
+      (with unstable; [
         gcc
         gdb
         clang
@@ -35,13 +35,13 @@ pkgs.mkShell {
       ])
     ++
       # --- Lua ---
-      (with pkgs; [
+      (with unstable; [
         lua5_4_compat
         luarocks
       ])
     ++
       # --- Rust ---
-      (with pkgs; [
+      (with unstable; [
         rust-analyzer
         rustfmt
         clippy
