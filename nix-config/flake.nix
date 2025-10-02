@@ -31,6 +31,7 @@
     flake-parts,
     ...
   } @ inputs: let
+    #import my lib for helper function
     myLib = import ./lib {inherit (nixpkgs) lib;};
     # make diffrent pkgs instance for you want
     mkPkgs = system: {
@@ -43,17 +44,14 @@
         config.allowUnfree = true;
       };
     };
-    #add sytems which you want to support
-    systems = [
-      "x86_64-linux"
-    ];
     #add your host info here
     hosts = {
       wsl = "x86_64-linux";
     };
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
-      inherit systems;
+      #add your systems here
+      systems = ["x86_64-linux"];
       perSystem = {
         system,
         pkgs,
@@ -61,7 +59,7 @@
         ...
       }: {
         devShells = import ./devShells {
-          inherit (mkPkgs system) stable unstable; 
+          inherit (mkPkgs system) stable unstable;
           inherit lib;
         };
         packages = import ./pkgs {inherit pkgs system myLib;};
