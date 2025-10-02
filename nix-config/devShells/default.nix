@@ -24,10 +24,10 @@
     go = ["go"];
     c = ["c"];
   };
+  extraPkgs = with stable; [
+    fish
+  ];
   loadModules = moduleList: let
-    extraPkgs = with stable; [
-        fish
-    ];
     imported = map (name: import ./${name}.nix {inherit stable unstable;}) moduleList;
   in {
     packages = lib.flatten (map (m: m.packages or []) imported) ++ extraPkgs;
