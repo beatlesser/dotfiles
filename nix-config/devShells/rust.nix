@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ unstable, ... }:
 
 {
   packages = (
-    with pkgs;
+    with unstable;
     [
       rust-analyzer
       rustfmt

@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ unstable, ... }:
 
 {
   packages = (
-    with pkgs;
+    with unstable;
     [
       lua5_4_compat
       luarocks

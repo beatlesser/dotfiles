@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ unstable, ... }:
 {
   packages =
-    with pkgs;
+    with unstable;
     [
       clang-tools
       cmake
@@ -15,10 +15,10 @@
       vcpkg-tool
     ]
     ++ (if system == "aarch64-darwin" then [ ] else [ gdb ]);
-  nativeBuildInputs = [ pkgs.pkg-config ];
+  nativeBuildInputs = [ unstable.pkg-config ];
   env = {
-    LIBRARY_PATH = "${pkgs.zlib}/lib";
-    CPATH = "${pkgs.zlib.dev}/include";
+    LIBRARY_PATH = "${unstable.zlib}/lib";
+    CPATH = "${unstable.zlib.dev}/include";
   };
   shellHook = ''
     echo "🛠️ C/C++ environment loaded"

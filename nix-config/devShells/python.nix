@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ unstable, ... }:
 
 let
-  python-packages = pkgs.python3.withPackages (
+  python-packages = unstable.python3.withPackages (
     ps: with ps; [
       uv
       requests
@@ -12,7 +12,7 @@ let
   );
 in
 {
-  packages = with pkgs; [
+  packages = with unstable; [
     python-packages
     pyright
   ];

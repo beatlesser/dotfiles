@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ unstable, ... }:
 {
   packages =
-    (with pkgs; [
+    (with unstable; [
       nodejs_22
       node2nix
     ])
-    ++ (with pkgs.nodePackages; [
+    ++ (with unstable.nodePackages; [
       yarn
       pnpm
       eslint_d
