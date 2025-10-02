@@ -26,6 +26,7 @@
   outputs = {
     nixpkgs,
     nixpkgs-unstable,
+    nur,
     nixos-wsl,
     flake-parts,
     ...
@@ -83,6 +84,11 @@
                   ./hosts/${host}
                   #add your overlays pkgs here
                   ./overlays
+                  {
+                    nixpkgs.overlays = [
+                        nur.overlays.default
+                    ];
+                  }
                 ];
               }
           )
