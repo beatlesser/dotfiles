@@ -25,13 +25,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    #nix-output-monitor for debug
-    nix-out-monitor = {
-      url = "github:maralorn/nix-output-monitor";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     #flake-parts: better flake config
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
