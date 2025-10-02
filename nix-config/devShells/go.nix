@@ -4,7 +4,7 @@
   packages = (
     with pkgs;
     [
-      go_1_25
+    go
       gotools # goimports, godoc, etc.
       golangci-lint # https://github.com/golangci/golangci-lint
     ]
