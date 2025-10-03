@@ -42,11 +42,11 @@
     mkPkgs = system: {
       stable = import nixpkgs {
         inherit system;
-        allowUnfree = true;
+        config.allowUnfree = true;
       };
       unstable = import nixpkgs-unstable {
         inherit system;
-        allowUnfree = true;
+        config.allowUnfree = true;
       };
     };
     #add your host info here
@@ -76,14 +76,13 @@
             host: system:
               nixpkgs.lib.nixosSystem {
                 inherit system;
-                specialArgs =
-                  {
-                    inherit inputs;
-                    inherit host;
-                    inherit myLib;
-                    inherit system;
-                    inherit (mkPkgs system) stable unstable;
-                  };
+                specialArgs = {
+                  inherit inputs;
+                  inherit host;
+                  inherit myLib;
+                  inherit system;
+                  inherit (mkPkgs system) stable unstable;
+                };
                 modules = [
                   #add your hosts module here
                   ./hosts/${host}

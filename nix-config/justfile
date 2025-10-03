@@ -16,7 +16,11 @@ set positional-arguments
 [linux]
 [group('nix')]
 @clean:
+    #Wipe out NixOS's history
     sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d
+
+    # Wipe out home-manager's history
+    nix profile wipe-history --profile "$XDG_STATE_HOME/nix/profiles/home-manager" --older-than 7d
 
 [linux]
 [group('nix')]
@@ -24,6 +28,12 @@ set positional-arguments
     sudo nix-collect-garbage --delete-older-than 7d
 
     nix-collect-garbage --delete-older-than 7d
+
+[linux]
+[group('nix')]
+repl:
+    nix repl -f '<nixpkgs>'
+
 
 [linux]
 [group('nix')]
