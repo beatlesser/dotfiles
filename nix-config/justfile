@@ -10,8 +10,8 @@ set positional-arguments
 
 [linux]
 [group('nix')]
-@up *inputs:
-    nix flake update {{ inputs }} --commit-lock-file
+@up:
+    nix flake update --commit-lock-file
 
 [linux]
 [group('nix')]

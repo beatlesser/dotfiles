@@ -25,7 +25,7 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #flake-parts: better flake config
+    #flake-parts for better flake config
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
   outputs = {

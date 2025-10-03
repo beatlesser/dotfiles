@@ -1,4 +1,5 @@
 {
+    pkgs,
   ...
 }: let
   inherit (import ./vars.nix) username;
@@ -8,7 +9,8 @@ in {
   };
   # Cachix, Optimization settings and garbage collection automation
   nix = {
-    channel.enable = false;
+    package = pkgs.lix;
+    channel.enable = true;
     extraOptions = ''
       warn-dirty = false
     '';
