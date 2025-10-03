@@ -38,15 +38,15 @@
   } @ inputs: let
     #import my lib for helper function
     myLib = import ./lib {inherit (nixpkgs) lib;};
-    # make diffrent pkgs instance for you want
+    # make diffrent pkgs instance for diffrent system
     mkPkgs = system: {
       stable = import nixpkgs {
         inherit system;
-        config.allowUnfree = true;
+        allowUnfree = true;
       };
       unstable = import nixpkgs-unstable {
         inherit system;
-        config.allowUnfree = true;
+        allowUnfree = true;
       };
     };
     #add your host info here
@@ -80,11 +80,10 @@
                   {
                     inherit inputs;
                     inherit host;
-                    inherit (nixpkgs) lib;
                     inherit myLib;
                     inherit system;
-                  }
-                  // mkPkgs system;
+                    inherit (mkPkgs system) stable unstable;
+                  };
                 modules = [
                   #add your hosts module here
                   ./hosts/${host}
