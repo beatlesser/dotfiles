@@ -14,9 +14,6 @@ if status is-interactive # Commands to run in interactive sessions can go here
     # Set default editor 
     set -gx EDITOR nvim
 
-    #fzf integration
-    fzf --fish | source
-
     #zoxide integration
     zoxide init fish | source
 
@@ -25,5 +22,6 @@ if status is-interactive # Commands to run in interactive sessions can go here
 
     #alias
     alias vi 'nvim'
+    alias ls 'lsd'
 end
 
