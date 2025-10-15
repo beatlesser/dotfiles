@@ -1,7 +1,7 @@
 command = /usr/bin/fish
 font-size = 14
 font-family = "Maple Mono NF CN"
-# font-family = "Symbols Nerd Font"
+font-family = "Symbols Nerd Font"
 font-style = Regular
 font-feature = +cv12
 font-feature = +cv18
@@ -16,5 +16,6 @@ shell-integration-features = no-cursor
 window-padding-y = 10
 window-padding-x = 10
 window-padding-balance = true
+window-vsync = true
 gtk-single-instance = true
 theme = noctalia
