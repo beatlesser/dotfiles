@@ -7,4 +7,5 @@ function fish_change_vi_mode
   set -g fish_sequence_key_delay_ms 200
 end
 
-fish_change_vi_mode
+# disable jk mode
+# fish_change_vi_mode
