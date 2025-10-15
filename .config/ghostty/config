@@ -17,3 +17,4 @@ window-padding-y = 10
 window-padding-x = 10
 window-padding-balance = true
 gtk-single-instance = true
+theme = noctalia
