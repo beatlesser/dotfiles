@@ -12,7 +12,9 @@ local CodeFormatter = {
             formatters_by_ft = {
                 lua = { 'stylua' },
                 nix = {'alejandra','nixfmt','nixpkgs-fmt'},
-                xml = {'xmlformatter'}, },
+                xml = {'xmlformatter'}, 
+                kdl = {'kdlfmt'},
+            },
         }
 
         local do_format = function()

@@ -78,8 +78,8 @@ color = "#F5E0DC"
 draw_bold_text_with_bright_colors = true
 
 [font]
-normal = { family = "Maple Mono NF CN", style = "Regular" }
-size = 12
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+size = 13
 
 [terminal]
 shell = { program = "/usr/bin/fish" }
@@ -100,7 +100,8 @@ save_to_clipboard = true
 
 [keyboard]
 bindings = [
-  # macOS window
+  {key = "c", mods = "Control", action = "Copy"},
+  {key = "v", mods = "Control", action = "Paste"},
   { key = "n", mods = "Control | Shift", action = "CreateNewWindow" },
   { key = "t", mods = "Control | Shift", action = "CreateNewTab" },
   { key = "1", mods = "Control | Shift", action = "SelectTab1" },
