@@ -1,7 +1,7 @@
 local Keymaps = {}
 
 function Keymaps.apply() 
-	vim.keymap.set('i', 'jk', '<esc>', { desc = 'better escape', noremap = true })
+	--vim.keymap.set('i', 'jk', '<esc>', { desc = 'better escape', noremap = true })
     --resize window
     vim.keymap.set('n', '<C-Left>', '<cmd>SmartResizeLeft<cr>', { noremap = true, silent = true })
     vim.keymap.set('n', '<C-Right>', '<cmd>SmartResizeRight<cr>', { noremap = true, silent = true })

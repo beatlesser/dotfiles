@@ -6,15 +6,11 @@
 //spawn-at-startup "waybar"
 environment {
     //输入法
-    XDG_CURRENT_DESKTOP "Niri"
-    XDG_SESSION_TYPE "wayland"
-    XDG_SESSION_DESKTOP "Niri"
     XMODIFIERS "@im=fcitx"
     //GTK_IM_MODULE "fcitx"
-    QT_IM_MODULE "fcitx"
+    //QT_IM_MODULE "fcitx"
     INPUT_METHOD "fcitx"
     SDL_IM_MODULE "fcitx"
-    GLFW_IM_MODULE "ibus"
     QT_QPA_PLATFORMTHEME "gtk3"
 }
 spawn-at-startup "fcitx5"
@@ -22,7 +18,7 @@ spawn-at-startup "dbus-update-activation-environment --all"
 spawn-at-startup "easyeffects --gapplicaiton-service"
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 spawn-at-startup "udiske &"
-spawn-at-startup "xwayland-satellite"
+//spawn-at-startup "xwayland-satellite"
 spawn-at-startup "qs" "-c" "noctalia-shell"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
