@@ -23,5 +23,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     #alias
     alias vi 'nvim'
     alias ls 'lsd'
+    alias la 'ls -a'
+    alias ll 'ls -la'
 end
 

@@ -5,6 +5,11 @@
 // This line starts waybar, a commonly used bar for Wayland compositors.
 //spawn-at-startup "waybar"
 environment {
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    XDG_SESSION_TYPE "wayland"
+    XDG_CURRENT_DESKTOP "Niri"
+    XDG_SESSION_DESKTOP "Niri"
+    GSK_RENDERER "vulkan"
     //输入法
     XMODIFIERS "@im=fcitx"
     //GTK_IM_MODULE "fcitx"
@@ -12,6 +17,8 @@ environment {
     INPUT_METHOD "fcitx"
     SDL_IM_MODULE "fcitx"
     QT_QPA_PLATFORMTHEME "gtk3"
+    QT_QPA_PLATFORM "wayland;xcb"
+    LANG "zh_CN.UTF-8"
 }
 spawn-at-startup "fcitx5"
 spawn-at-startup "dbus-update-activation-environment --all"
@@ -346,7 +353,7 @@ binds {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
     }
     Mod+Semicolon hotkey-overlay-title="Open a Terminal" {
-        spawn "alacritty"
+        spawn "ghostty"
     }
     Mod+Apostrophe hotkey-overlay-title="Open Browser" {
         spawn "firefox"
