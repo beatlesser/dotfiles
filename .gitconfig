@@ -1,0 +1,31 @@
+[user]
+    name = "beatlesser"
+    email = "2429209973@qq.com"
+
+[core]
+    pager = delta
+    editor = nvim
+
+[delta]
+    diff-so-fancy = true
+    line-numbers =true
+    true-color = "always"
+
+[alias]
+    br = "branch"
+    sw = "switch"
+    rs = "reset"
+    rt = "restore"
+    st = "status"
+    df = "diff"
+    ls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate"
+    ll = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat"
+    cm = "commit -m"
+    ca = "commit -am"
+    caa = "commit --amend -a --no-edit"
+
+[init]
+    defaultBranch = "main"
+
+[pull]
+    rebase = true
