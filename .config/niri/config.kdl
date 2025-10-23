@@ -25,7 +25,7 @@ spawn-at-startup "fcitx5"
 spawn-at-startup "easyeffects --gapplicaiton-service"
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 spawn-at-startup "udiskie &"
-//spawn-at-startup "xwayland-satellite"
+spawn-at-startup "xwayland-satellite"
 spawn-at-startup "qs" "-c" "noctalia-shell"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
