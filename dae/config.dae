@@ -36,6 +36,11 @@ group {
     #filter: name(keyword: HK, keyword: SG)
     policy: min_moving_avg
   }
+
+  ai {
+    filter: !name(HK_node)
+    policy: min_moving_avg
+  }
 }
 
 # 更多的 Routing 样例见 https://github.com/daeuniverse/dae/blob/main/docs/en/configuration/routing.md
@@ -45,6 +50,8 @@ routing {
 
   ### 以下为自定义规则
   dport(22) && domain(github.com) -> direct
+  domain(edu.cn) -> direct
+  domain(chatgpt.com) -> ai
 
   # 禁用 h3，因为它通常消耗很多 CPU 和内存资源
   l4proto(udp) && dport(443) -> block
