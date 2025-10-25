@@ -3,7 +3,7 @@
 * {
   /* https://docs.gtk.org/gtk3/css-overview.html#colors */
   color: @text;
-  font-family: "Maple Mono NF CN";
+  font-family: "Maple Mono NF CN,Symbol Nerd Font Mono";
   font-size: 12pt;
   font-weight: bold;
   border-radius: 8px;
