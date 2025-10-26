@@ -1,0 +1,25 @@
+* {
+    font-family: "Maple Mono NF CN","Symbols Nerd Font";
+    font-weight: bold;
+    font-size: 13px;
+    color: @text;
+}
+
+#waybar {
+	background-color: transparent;
+}
+#waybar > box {
+	margin: 4px; }
+
+/*--------------
+	tooltips
+--------------*/
+
+tooltip {
+	border: 2px solid @subtext0;
+	border-radius: 10px;
+	background-color: @crust;
+}
+tooltip > box {
+	padding: 0 6px;
+}

@@ -1,0 +1,10 @@
+#clock {
+  background-color: @surface0;
+  padding: 5px 10px;
+  border-radius: 8px; /* This module is always rounded */
+  min-width: 0;
+}
+
+#clock:hover {
+  background-color: @surface1;
+}

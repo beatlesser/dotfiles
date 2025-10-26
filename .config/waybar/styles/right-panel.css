@@ -1,0 +1,24 @@
+#bluetooth,
+#pulseaudio,
+#backlight,
+#battery
+{
+	background-color: @surface0;
+    padding: 0 10px;
+} 
+
+
+#bluetooth:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover {
+    background-color: @surface1;
+}
+
+#bluetooth {
+    border-radius: 10px 0 0 10px;
+}
+
+#battery {
+    border-radius: 0 10px 10px 0;
+}

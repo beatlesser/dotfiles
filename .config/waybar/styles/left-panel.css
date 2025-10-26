@@ -1,0 +1,36 @@
+#workspaces,
+#cpu,
+#memory,
+#network
+{
+   background-color: @surface0; 
+   padding: 0 10px;
+}
+
+
+#memory:hover,
+#cpu:hover,
+#network:hover
+{
+   background-color: @surface1; 
+   padding: 0 10px;
+}
+
+#workspaces {
+    border-radius: 10px 0 0 10px;
+}
+
+#workspaces button {
+    border-radius: 16px;
+    min-width: 16px;
+    padding: 0 10px;
+}
+
+#workspaces button:hover {
+	background-color: @crust;
+	color: @base;
+}
+
+#network {
+    border-radius: 0 10px 10px 0;
+}
