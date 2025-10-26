@@ -5,12 +5,12 @@
     "format-icons": [
 			"󰤟", "󰤢", "󰤥", "󰤨"
 	],
-    "format-wifi": "{icon}  {bandwidthDownBytes}  {bandwidthUpBytes}",
-    "format-ethernet": "   {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "format-wifi": "{icon}  {bandwidthDownBytes},  {bandwidthUpBytes}",
+    "format-ethernet": "   {bandwidthDownBytes},  {bandwidthUpBytes}",
     "format-disconnected": "Disconnected ⚠",
     "tooltip-format": "GateWay: {gwaddr}",
-    "tooltip-format-wifi": "{icon} {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthDownBytes}  {bandwidthUpBytes}",
-    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "tooltip-format-wifi": "{icon} {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthDownBytes},  {bandwidthUpBytes}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthDownBytes},  {bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
   },
 }

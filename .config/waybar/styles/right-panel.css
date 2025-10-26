@@ -4,20 +4,62 @@
 #backlight,
 #battery
 {
-	background-color: @surface0;
     padding: 0 10px;
 } 
 
+#battery
+{
+    background-color: @crust;
+}
 
-#bluetooth:hover,
-#pulseaudio:hover,
-#backlight:hover,
-#battery:hover {
+#custom-left_div.1 {
+    background-color: @mantle;
+    color: @crust;
+}
+
+#backlight {
+    background-color: @mantle;
+}
+
+#custom-left_div.2 {
+    background-color: @base;
+    color: @mantle;
+}
+
+#pulseaudio {
+    background-color: @base;
+}
+
+#custom-left_div.3 {
+    background-color: @surface0;
+    color: @base;
+}
+
+#bluetooth {
+    background-color: @surface0;
+}
+
+#custom-left_div.4 {
+    background-color: @surface1;
+    color: @surface0;
+}
+
+
+#tray {
     background-color: @surface1;
 }
 
-#tray {
-    border-radius: 10px 0 0 10px;
+#custom-left_div.5 {
+    color: @surface1;
+}
+
+#tray:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover
+{
+    background-color: @surface2;
 }
 
 #battery {

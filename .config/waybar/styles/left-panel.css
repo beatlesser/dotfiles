@@ -1,14 +1,39 @@
+#workspaces
+{
+    background-color: @crust;
+    border-radius: 10px 0 0 10px;
+}
+
+#custom-right_div.1 {
+    background-color: @mantle;
+    color: @crust;
+}
+
+#memory,
+#cpu
+{
+    background-color: @mantle;
+}
+
+#custom-right_div.2 {
+    background-color: @base;
+    color: @mantle;
+}
+
+#network
+{
+   background-color: @base; 
+}
+
+#custom-right_div.3 {
+    color: @base;
+}
+
+#workspaces,
 #cpu,
 #memory,
 #network
 {
-   background-color: @surface0; 
-   padding: 0 10px;
-}
-
-#workspaces {
-    background-color: @surface0;
-    border-radius: 10px 0 0 10px;
     padding: 0 10px;
 }
 
@@ -17,7 +42,7 @@
 #cpu:hover,
 #network:hover
 {
-   background-color: @surface1; 
+   background-color: @surface0; 
    padding: 0 10px;
 }
 
@@ -29,10 +54,5 @@
 
 #workspaces button:hover {
     border-color: transparent;
-    background-color: @surface1;
 	color: @base;
-}
-
-#network {
-    border-radius: 0 10px 10px 0;
 }

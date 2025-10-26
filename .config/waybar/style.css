@@ -1,5 +1,6 @@
 @import "styles/left-panel.css";
 @import "styles/center-panel.css";
 @import "styles/right-panel.css";
+@import "styles/common.css";
 @import "styles/waybar.css";
 @import "themes/mocha.css";

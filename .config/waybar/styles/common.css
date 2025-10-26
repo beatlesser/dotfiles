@@ -1,0 +1,14 @@
+* {
+    font-family: "Maple Mono NF CN","Symbols Nerd Font";
+    font-weight: bold;
+    font-size: 13px;
+    color: @text;
+}
+
+
+#custom-left_div,
+#custom-right_div
+{
+	font-size: 20px;
+}
+

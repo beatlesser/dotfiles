@@ -1,10 +1,11 @@
 {
   "pulseaudio": {
-    "format": "{icon}{volume}%",
+    "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", " "]
+      "default": ["", "", ""]
     },
-    "on-click": "pavucontrol"
+    "scroll-step": 5.0,
+    "smooth-scrolling-threshold": 1,
   }
 }
