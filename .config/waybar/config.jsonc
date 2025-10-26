@@ -24,9 +24,8 @@
   ],
   "modules-center": ["clock"],
   "modules-right": [
-    "custom/left_div#5",
-    "tray",
     "custom/left_div#4",
+    "tray",
     "bluetooth",
     "custom/left_div#3",
     "pulseaudio", 

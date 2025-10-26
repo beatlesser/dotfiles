@@ -35,22 +35,14 @@
     color: @base;
 }
 
-#bluetooth {
+#bluetooth,
+#tray 
+{
     background-color: @surface0;
 }
 
 #custom-left_div.4 {
-    background-color: @surface1;
     color: @surface0;
-}
-
-
-#tray {
-    background-color: @surface1;
-}
-
-#custom-left_div.5 {
-    color: @surface1;
 }
 
 #tray:hover,
@@ -59,7 +51,7 @@
 #backlight:hover,
 #battery:hover
 {
-    background-color: @surface2;
+    background-color: @surface1;
 }
 
 #battery {
