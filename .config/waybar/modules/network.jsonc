@@ -1,10 +1,16 @@
 {
   "network": {
-    "format-wifi": "󰤢",
-    "format-ethernet": "󰈀 ",
-    "format-disconnected": "󰤠 ",
-    "interval": 5,
-    "tooltip-format": "{essid} ({signalStrength}%)",
-    "on-click": "nm-connection-editor"
- }
+    "interval": 10,
+    "format": "󰤨",
+    "format-icons": [
+			"󰤟", "󰤢", "󰤥", "󰤨"
+	],
+    "format-wifi": "{icon}  {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "format-ethernet": "   {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "format-disconnected": "Disconnected ⚠",
+    "tooltip-format": "GateWay: {gwaddr}",
+    "tooltip-format-wifi": "{icon} {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+  },
 }

@@ -1,10 +1,15 @@
-#workspaces,
 #cpu,
 #memory,
 #network
 {
    background-color: @surface0; 
    padding: 0 10px;
+}
+
+#workspaces {
+    background-color: @surface0;
+    border-radius: 10px 0 0 10px;
+    padding: 0 10px;
 }
 
 
@@ -16,10 +21,6 @@
    padding: 0 10px;
 }
 
-#workspaces {
-    border-radius: 10px 0 0 10px;
-}
-
 #workspaces button {
     border-radius: 16px;
     min-width: 16px;
@@ -27,7 +28,8 @@
 }
 
 #workspaces button:hover {
-	background-color: @crust;
+    border-color: transparent;
+    background-color: @surface1;
 	color: @base;
 }
 
