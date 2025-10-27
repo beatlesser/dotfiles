@@ -2,7 +2,6 @@
 #bluetooth,
 #pulseaudio,
 #backlight,
-#battery
 {
     padding: 0 10px;
 } 
@@ -10,6 +9,7 @@
 #battery
 {
     border-radius: 0 10px 10px 0;
+    padding: 0 14px 0 10px;
     background-color: @surface0;
 }
 
