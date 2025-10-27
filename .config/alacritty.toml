@@ -78,7 +78,7 @@ color = "#F5E0DC"
 draw_bold_text_with_bright_colors = true
 
 [font]
-normal = { family = "Maple Mono NF CN", style = "Regular" }
+normal = { family = "Maple Mono CN", style = "Regular" }
 size = 14
 
 [terminal]
