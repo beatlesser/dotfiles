@@ -37,15 +37,6 @@
     padding: 0 10px;
 }
 
-
-#memory:hover,
-#cpu:hover,
-#network:hover
-{
-   background-color: @surface0; 
-   padding: 0 10px;
-}
-
 #workspaces button {
     border-radius: 16px;
     min-width: 16px;

@@ -45,15 +45,6 @@
     color: @surface0;
 }
 
-#tray:hover,
-#bluetooth:hover,
-#pulseaudio:hover,
-#backlight:hover,
-#battery:hover
-{
-    background-color: @surface1;
-}
-
 #battery {
     border-radius: 0 10px 10px 0;
 }
