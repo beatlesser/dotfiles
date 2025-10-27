@@ -1,32 +1,32 @@
 #workspaces
 {
-    background-color: @crust;
     border-radius: 10px 0 0 10px;
+    background-color: @surface0;
 }
 
 #custom-right_div.1 {
-    background-color: @mantle;
-    color: @crust;
+    background-color: @base;
+    color: @surface0;
 }
 
 #memory,
 #cpu
 {
-    background-color: @mantle;
+    background-color: @base;
 }
 
 #custom-right_div.2 {
-    background-color: @base;
-    color: @mantle;
+    background-color: @mantle;
+    color: @base;
 }
 
 #network
 {
-   background-color: @base; 
+   background-color: @mantle; 
 }
 
 #custom-right_div.3 {
-    color: @base;
+    color: @mantle;
 }
 
 #workspaces,
@@ -39,11 +39,6 @@
 
 #workspaces button {
     border-radius: 16px;
-    min-width: 16px;
     padding: 0 10px;
 }
 
-#workspaces button:hover {
-    border-color: transparent;
-	color: @base;
-}

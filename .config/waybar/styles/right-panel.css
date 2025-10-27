@@ -9,42 +9,39 @@
 
 #battery
 {
-    background-color: @crust;
+    border-radius: 0 10px 10px 0;
+    background-color: @surface0;
 }
 
 #custom-left_div.1 {
-    background-color: @mantle;
-    color: @crust;
+    background-color: @base;
+    color: @surface0;
 }
 
 #backlight {
-    background-color: @mantle;
+    background-color: @base;
 }
 
 #custom-left_div.2 {
-    background-color: @base;
-    color: @mantle;
+    background-color: @mantle;
+    color: @base;
 }
 
 #pulseaudio {
-    background-color: @base;
+    background-color: @mantle;
 }
 
 #custom-left_div.3 {
-    background-color: @surface0;
-    color: @base;
+    background-color: shade(@mantle, 0.8);
+    color: @mantle;
 }
 
 #bluetooth,
 #tray 
 {
-    background-color: @surface0;
+    background-color: shade(@mantle, 0.8);
 }
 
 #custom-left_div.4 {
-    color: @surface0;
-}
-
-#battery {
-    border-radius: 0 10px 10px 0;
+    color: shade(@mantle, 0.8);
 }

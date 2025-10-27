@@ -4,23 +4,23 @@
 	-------------------*/
 
 	"custom/left_div#1": {
-		"format": "",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/left_div#2": {
-		"format": "",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/left_div#3": {
-		"format": "",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/left_div#4": {
-		"format": "",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/left_div#5": {
-		"format": "",
+		"format": "",
 		"tooltip": false
 	},
 	/*--------------------
@@ -28,15 +28,15 @@
 	--------------------*/
 
 	"custom/right_div#1": {
-		"format": "",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/right_div#2": {
-		"format": "",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/right_div#3": {
-		"format": "",
+		"format": "",
 		"tooltip": false
 	}
 }
