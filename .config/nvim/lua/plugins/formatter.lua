@@ -10,13 +10,19 @@ local CodeFormatter = {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				lua = { "stylua", "ast-grep" },
-				go = { "goimports", "ast-grep" },
-				typescript = { "biome", "ast-grep" },
+				lua = { "stylua" },
+				go = { "goimports" },
+				typescript = { "biome" },
 				json = { "biome" },
+				jsonc = { "biome" },
 				nix = { "alejandra", "nixfmt", "nixpkgs-fmt" },
 				xml = { "xmlformatter" },
 				kdl = { "kdlfmt" },
+			},
+			format_on_save = {
+				-- These options will be passed to conform.format()
+				timeout_ms = 500,
+				lsp_format = "fallback",
 			},
 		})
 
