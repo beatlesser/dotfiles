@@ -304,7 +304,7 @@ output "HDMI-A-1" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080@120.000"
+    mode "1920x1080@180.000"
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1.0
  // Transform allows to rotate the output counter-clockwise, valid values are: normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.    transform "normal"
@@ -382,7 +382,7 @@ layout {
         // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#b4befe"
         // Color of the ring on inactive monitors.
         //
         // The focus ring only draws around the active window, so the only place
