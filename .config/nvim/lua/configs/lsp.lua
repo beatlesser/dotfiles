@@ -3,7 +3,9 @@ local LspConfig = {}
 function LspConfig.apply()
     local lsp_list = {
         'lua_ls',
-        -- 'clice',
+        'biome',
+        'ts_ls',
+        'gopls'
     }
 
     for _, name in ipairs(lsp_list) do
