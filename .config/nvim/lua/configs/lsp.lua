@@ -3,14 +3,12 @@ local LspConfig = {}
 function LspConfig.apply()
     local lsp_list = {
         'lua_ls',
-        'nil',
         -- 'clice',
     }
 
     for _, name in ipairs(lsp_list) do
         vim.lsp.enable(name)
     end
-
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
