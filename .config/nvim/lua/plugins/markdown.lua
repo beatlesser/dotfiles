@@ -123,13 +123,7 @@ local MarkdownPreview = {
 
         vim.keymap.set(
             'n',
-            '<F8>',
-            '<cmd>MarkdownPreviewToggle<CR>',
-            { desc = 'MarkdownPreviewToggle', noremap = true, silent = true }
-        )
-        vim.keymap.set(
-            'n',
-            '<Leader>p',
+            '<Leader>mp',
             '<cmd>MarkdownPreviewToggle<CR>',
             { desc = 'MarkdownPreviewToggle', noremap = true, silent = true }
         )
