@@ -9,7 +9,7 @@ environment {
     GSK_RENDERER "vulkan"
     //输入法
     XMODIFIERS "@im=fcitx"
-    // GTK_IM_MODULE "fcitx"
+    //GTK_IM_MODULE "fcitx"
     QT_IM_MODULES "wayland;fcitx"
     INPUT_METHOD "fcitx"
     SDL_IM_MODULE "fcitx"

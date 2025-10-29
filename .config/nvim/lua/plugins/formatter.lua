@@ -11,10 +11,12 @@ local CodeFormatter = {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				go = { "goimports" },
+				go = { "crlfmt", "goimports" },
 				typescript = { "biome" },
 				json = { "biome" },
 				jsonc = { "biome" },
+				toml = { "taplo" },
+				yaml = { "yamlfmt" },
 				nix = { "alejandra", "nixfmt", "nixpkgs-fmt" },
 				xml = { "xmlformatter" },
 				kdl = { "kdlfmt" },
