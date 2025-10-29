@@ -17,7 +17,6 @@ environment {
     QT_QPA_PLATFORM "wayland;xcb"
     LANG "zh_CN.UTF-8"
 }
-
 spawn-at-startup "fcitx5"
 spawn-at-startup "dbus-update-activation-environment --all"
 spawn-at-startup "easyeffects --gapplicaiton-service"
@@ -25,43 +24,50 @@ spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 spawn-at-startup "udiskie &"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "qs" "-c" "noctalia-shell"
-
 binds {
     // Core Noctalia binds
-    Mod+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+Space {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
+    }
     // Audio controls
-    XF86AudioRaiseVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-
+    XF86AudioRaiseVolume {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"
+    }
+    XF86AudioLowerVolume {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"
+    }
+    XF86AudioMute {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"
+    }
     // Brightness controls
-    XF86MonBrightnessUp { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"; }
-    XF86MonBrightnessDown { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
-
+    XF86MonBrightnessUp {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"
+    }
+    XF86MonBrightnessDown {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"
+    }
     // Utility shortcuts
-    Mod+C { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
-    Super+L { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
-
+    Mod+C {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"
+    }
+    Super+L {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"
+    }
     Mod+Shift+Slash {
         show-hotkey-overlay
     }
-
     Mod+Semicolon hotkey-overlay-title="Open a Terminal" {
         spawn "kitty"
     }
-
     Mod+Apostrophe hotkey-overlay-title="Open Browser" {
         spawn "firefox"
     }
-
     Mod+O repeat=false {
         toggle-overview
     }
-
     Mod+Q repeat=false {
         close-window
     }
-
     Mod+S {
         center-column
     }
