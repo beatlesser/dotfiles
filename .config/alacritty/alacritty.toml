@@ -1,0 +1,30 @@
+[general]
+import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
+
+[font]
+normal = { family = "Maple Mono CN", style = "Regular" }
+size = 14
+
+[terminal]
+shell = { program = "/usr/bin/fish" }
+
+[window]
+decorations = "None"
+dynamic_padding = true
+padding = { x = 10, y = 10 }
+dimensions = { columns = 80, lines = 24 }
+opacity = 0.9
+blur = true
+
+[scrolling]
+history = 5000
+
+[selection]
+save_to_clipboard = true
+
+[keyboard]
+bindings = [
+  { key = "c", mods = "Control", action = "Copy" },
+  { key = "k", mods = "Control", chars = "\u0003" },
+  { key = "v", mods = "Control", action = "Paste" },
+]
