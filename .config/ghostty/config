@@ -1,4 +1,3 @@
-theme = Catppuccin Mocha
 command = /usr/bin/fish
 font-size = 14
 font-family = "Maple Mono CN"
