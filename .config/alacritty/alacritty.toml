@@ -2,7 +2,7 @@
 import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
 
 [font]
-normal = { family = "GeistMono Nerd Font", style = "Regular" }
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 size = 14
 
 [terminal]
