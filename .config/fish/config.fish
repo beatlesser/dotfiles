@@ -8,12 +8,11 @@ end
 
 if status is-interactive # Commands to run in interactive sessions can go here
 
-    # No greeting
-    set fish_greeting
+    zoxide init fish | source
 
-    # Set default editor 
-    set -gx EDITOR nvim
+    tv init fish | source
 
+    starship init fish | source
 
 end
 
