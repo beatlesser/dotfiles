@@ -14,16 +14,6 @@ if status is-interactive # Commands to run in interactive sessions can go here
     # Set default editor 
     set -gx EDITOR nvim
 
-    #zoxide integration
-    zoxide init fish | source
 
-    # Use starship
-    starship init fish | source
-
-    #alias
-    alias vi 'nvim'
-    alias ls 'lsd'
-    alias la 'ls -ha'
-    alias ll 'ls -hla'
 end
 
