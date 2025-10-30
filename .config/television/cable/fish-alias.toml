@@ -1,0 +1,11 @@
+[metadata]
+name = "fish-alias"
+description = "A channel to select from fish aliases"
+requirements = ["bat"]
+
+[source]
+command = "alias"
+display = "{split: :1}"
+
+[preview]
+command = "printf {split: :2..|join: }"

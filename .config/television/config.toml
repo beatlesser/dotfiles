@@ -1,0 +1,11 @@
+[ui]
+theme = "catppuccin"
+
+[shell_integration.channel_triggers]
+"git-branch" = ["git sw", "git switch", "git checkout"]
+"git-reflog" = ["git revert", "git rs", "git reset", "git show"]
+"git-repos" = ["cd", "z", "ls", "rmdir"]
+"env" = ["export", "unset"]
+"tldr" = ["tldr"]
+"dirs" = ["cd", "z", "ls", "rmdir"]
+"files" = ["mv", "cp", "cat", "bat"]
