@@ -2,7 +2,7 @@
 import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
 
 [font]
-normal = { family = "Maple Mono CN", style = "Regular" }
+normal = { family = "BerkeleyMono Nerd Font", style = "Regular" }
 size = 14
 
 [terminal]
