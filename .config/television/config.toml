@@ -2,8 +2,8 @@
 theme = "catppuccin"
 
 [shell_integration.channel_triggers]
-"git-branch" = ["git sw", "git switch", "git checkout"]
-"git-reflog" = ["git revert", "git rs", "git reset", "git show"]
+"git-branch" = ["git sw", "git switch", "git co", "git checkout"]
+"git-reflog" = ["git rv", "git revert", "git rs", "git reset", "git show"]
 "git-repos" = ["cd", "z", "ls", "rmdir"]
 "env" = ["export", "unset"]
 "tldr" = ["tldr"]
