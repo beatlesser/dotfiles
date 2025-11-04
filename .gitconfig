@@ -15,6 +15,7 @@
     br = "branch"
     sw = "switch"
     rs = "reset"
+    rv = "revert"
     rt = "restore"
     st = "status"
     df = "diff"
