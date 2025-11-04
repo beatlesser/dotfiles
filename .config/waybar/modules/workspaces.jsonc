@@ -1,14 +1,14 @@
 {
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "persistent-workspaces": {
-        "*": 2
-    },
-    "format-icons": {
-	  "active": "",
-	  "default": "",
-	},
-    "on-scroll-up": "hyprctl dispatch workspace +1",
-    "on-scroll-down": "hyprctl dispatch workspace -1",
-  },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "persistent-workspaces": {
+            "*": 1
+        },
+        "format-icons": {
+            "active": "",
+            "default": ""
+        },
+        "on-scroll-up": "hyprctl dispatch workspace +1",
+        "on-scroll-down": "hyprctl dispatch workspace -1"
+    }
 }
