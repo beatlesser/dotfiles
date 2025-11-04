@@ -1,10 +1,21 @@
-#tray,
 #bluetooth,
 #pulseaudio,
 #backlight
 {
     padding: 0 10px;
 } 
+
+#bluetooth:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover
+{
+    color: alpha(@text, 0.8);
+}
+
+#tray {
+    border-radius: 8px;
+}
 
 #battery
 {
