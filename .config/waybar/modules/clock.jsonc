@@ -1,8 +1,8 @@
 {
-  "clock": {
-    "interval": 60,
-    "timezone": "Asia/Shanghai",
-    "tooltip": false,
-    "format": "{:%H:%M %a, %b %d}"
-  }
+    "clock": {
+        "interval": 60,
+        "timezone": "Asia/Shanghai",
+        "tooltip": false,
+        "format": "{:%H:%M %A, %m/%d}"
+    }
 }
