@@ -38,7 +38,7 @@ group {
   }
 
   ai {
-    filter: !name(HK_node)
+    filter: !name(keyword: '香港')
     policy: min_moving_avg
   }
 }

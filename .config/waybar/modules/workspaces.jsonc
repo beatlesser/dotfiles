@@ -1,8 +1,9 @@
 {
     "hyprland/workspaces": {
         "format": "{icon}",
+        "on-click": "activate",
         "persistent-workspaces": {
-            "*": 1
+            "HDMI-A-1": 2
         },
         "format-icons": {
             "active": "",
