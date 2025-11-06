@@ -23,7 +23,7 @@ local IntergratedTerminal = {
 			--     end
 			-- end,
 
-			open_mapping = { "<c-f>" },
+			open_mapping = { "<c-t>" },
 			-- on_create = fun(t: Terminal), -- function to run when the terminal is first created
 			-- on_open = fun(t: Terminal), -- function to run when the terminal opens
 			-- on_close = fun(t: Terminal), -- function to run when the terminal closes

@@ -1,5 +1,5 @@
 #alias
-alias cls 'clear'
+alias cl 'clear'
 alias vi 'nvim'
 alias ls 'lsd'
 alias la 'ls -ha'

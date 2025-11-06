@@ -8,4 +8,4 @@ fi
 
 alias vi='nvim'
 
-alias cls='clear'
+alias cl='clear'
