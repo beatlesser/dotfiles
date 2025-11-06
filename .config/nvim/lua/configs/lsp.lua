@@ -6,6 +6,7 @@ function LspConfig.apply()
 		"biome",
 		"ts_ls",
 		"gopls",
+		"bashls",
 	}
 
 	for _, name in ipairs(lsp_list) do
