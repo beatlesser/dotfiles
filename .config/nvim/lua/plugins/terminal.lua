@@ -23,7 +23,7 @@ local IntergratedTerminal = {
 			--     end
 			-- end,
 
-			open_mapping = { "<c-\\>", "<F7>" }, -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
+			open_mapping = { "<c-t>" },
 			-- on_create = fun(t: Terminal), -- function to run when the terminal is first created
 			-- on_open = fun(t: Terminal), -- function to run when the terminal opens
 			-- on_close = fun(t: Terminal), -- function to run when the terminal closes
@@ -93,8 +93,7 @@ local IntergratedTerminal = {
 			},
 		})
 
-		-- Use ctrl-/ to goto normal mode, so weird
-		vim.keymap.set("t", "<C-_>", "<cmd>stopinsert<cr>", { noremap = true, silent = true })
+		vim.keymap.set("t", "<c-n>", "<cmd>stopinsert<cr>", { noremap = true, silent = true })
 	end,
 }
 
