@@ -20,7 +20,7 @@ local CodeFormatter = {
 				nix = { "alejandra", "nixfmt", "nixpkgs-fmt" },
 				xml = { "xmlformatter" },
 				kdl = { "kdlfmt" },
-				bash = { "beautysh" },
+				sh = { "beautysh" },
 			},
 			format_on_save = {
 				-- These options will be passed to conform.format()
