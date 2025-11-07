@@ -64,3 +64,4 @@ zinit light lsd-rs/lsd
 ### End of Zinit's installer chunk
 
 [ -f $HOME/.config/zsh/alias.zsh ] && source $HOME/.config/zsh/alias.zsh
+[ -f $HOME/.config/zsh/env.zsh ] && source $HOME/.config/zsh/env.zsh
