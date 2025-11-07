@@ -24,18 +24,43 @@ zinit ice as"command" from"gh-r" \
           atpull"%atclone" src"init.zsh"
 zinit light starship/starship
 
+zinit ice as"command" from"gh-r" \
+          atclone"./zoxide init zsh > init.zsh" \
+          atpull"%atclone" src"init.zsh"
+zinit light ajeetdsouza/zoxide 
+
+
+zinit ice as"command" from"gh-r" \
+          mv"tv* -> tv" pick"tv/tv" \
+          atclone"./tv/tv init zsh > init.zsh" \
+          atpull"%mv;%atclone" src"init.zsh"
+zinit light alexpasmantier/television 
+
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
       zdharma-continuum/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
       zsh-users/zsh-autosuggestions \
   blockf atpull'zinit creinstall -q .' \
-      zsh-users/zsh-completions
+      zsh-users/zsh-completions \
+  depth=1 \
+      jeffreytse/zsh-vi-mode
 
 zinit wait"1" lucid light-mode for \
     OMZL::completion.zsh \
     OMZL::history.zsh \
 
+zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
+zinit light sharkdp/fd
+
 zinit ice as"command" from"gh-r" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
 zinit light BurntSushi/ripgrep
+
+zinit ice as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
+zinit light sharkdp/bat
+
+zinit ice as"command" from"gh-r" mv"lsd* -> lsd" pick"lsd/lsd"
+zinit light lsd-rs/lsd
 ### End of Zinit's installer chunk
+
+[ -f $HOME/.config/zsh/alias.zsh ] && source $HOME/.config/zsh/alias.zsh
