@@ -29,13 +29,6 @@ zinit ice as"command" from"gh-r" \
           atpull"%atclone" src"init.zsh"
 zinit light ajeetdsouza/zoxide 
 
-
-zinit ice as"command" from"gh-r" \
-          mv"tv* -> tv" pick"tv/tv" \
-          atclone"./tv/tv init zsh > init.zsh" \
-          atpull"%mv;%atclone" src"init.zsh"
-zinit light alexpasmantier/television 
-
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
       zdharma-continuum/fast-syntax-highlighting \
@@ -62,6 +55,6 @@ zinit light sharkdp/bat
 zinit ice as"command" from"gh-r" mv"lsd* -> lsd" pick"lsd/lsd"
 zinit light lsd-rs/lsd
 ### End of Zinit's installer chunk
-
 [ -f $HOME/.config/zsh/alias.zsh ] && source $HOME/.config/zsh/alias.zsh
 [ -f $HOME/.config/zsh/env.zsh ] && source $HOME/.config/zsh/env.zsh
+[ -f $HOME/.config/zsh/keybinds.zsh ] && source $HOME/.config/zsh/keybinds.zsh
