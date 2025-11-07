@@ -1,3 +1,4 @@
+#! /usr/bin/env fish
 function fish_change_vi_mode
   # enable vim mode
   fish_vi_key_bindings

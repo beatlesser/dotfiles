@@ -1,7 +1,11 @@
-#alias
+#! /usr/bin/env fish
 alias cl 'clear'
-alias vi 'nvim'
-alias ls 'lsd'
+
+[ -n $(command -v nvim) ] && alias vi 'nvim'
+
+[ -n $(command -v lsd) ] && alias ls 'lsd'
+
 alias la 'ls -ha'
 alias ll 'ls -hla'
-alias zz 'z -'
+
+[ -n $(command -v zoxide) ] && alias zz 'z -'
