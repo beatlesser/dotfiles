@@ -1,0 +1,210 @@
+mklink /D ~/Desktop/dotfiles/.config/nushell ~/AppData/Roaming/nushell
+mklink /D ~/AppData/Roaming/nushell ~/Desktop/dotfiles/.config/nushell
+$nu.home-path
+mklink /D $"($nu.home-path)\AppData\Roaming\nushell" $"($nu.home-path)\Desktop\dotfiles\.config\nushell"
+clear
+cp Desktop\dotfiles\.config\nushell AppData\Roaming\
+cp Desktop\dotfiles\.config\nushell AppData\Roaming\ -r
+clear
+starship
+clear
+bat dotfiles\.gitconfig
+clear
+winget find wechat
+winget add Tencent.WeChat
+winget ls
+clear
+winget ls
+ls
+clear
+cls
+winget find jujustu
+winget find jj-vcs.jj
+winget add jj-vcs.jj
+jj config set --user user.name "beatlesser"
+jj config set --user user.email "2429209973@qq.com"
+jj config path --user
+jj config path --user | zed
+zed C:\Users\24292\AppData\Roaming\jj\config.toml
+z dotfiles\
+ls
+jj diff
+cls
+z
+z Desktop\
+z project\
+ls
+z go-demo\
+ls
+cl
+cls
+jj git init --colocate
+ls
+jj st
+jj log
+jj describe
+jj config path --user
+zed C:\Users\24292\AppData\Roaming\jj\config.toml
+clear
+jj st
+jj describe -m "你好"
+zed .
+jj st
+jj file untrack _test
+ls
+cls
+jj st
+jj file untrack _test
+clos
+cls
+jj file untrack _test
+jj st
+cls
+jj st
+jj file untrack _test
+jj st
+cl
+cls
+jj new
+jj st
+jj log
+jj st
+jj df
+cl
+clear
+jj diff
+jj split
+jj st
+jj log
+clear
+ls
+jj
+clear
+ls
+rm .git .jj
+rm .git .jj -rf
+cls
+ls
+jj git init --colocate
+ls
+cls
+jj log
+jj st
+jj new
+ls
+cls
+jj st
+jj edit @-
+jj log
+cls
+jj edit @
+jj edit @+
+ls
+jj lgol
+jj log
+jj describe -m "你好"
+cls
+jj log
+jj new
+jj log
+jj edit p
+jj describe -m "你好,beatlesser"
+jj log
+jj new
+jj describe -m "你好,cyer"
+jj log
+jj edit p
+jj log
+cls
+jj log
+jj edit @+
+jj log
+jj abandon
+cls
+jj log
+jj desc -r t -m "init repo"
+jj log
+jj commit
+cls
+jj config path --user
+zed C:\Users\24292\AppData\Roaming\jj\config.toml
+jj st
+ls
+cls
+ls
+jj st
+jj desc -m "add some msg"
+jj desc
+jj split
+zed .
+jj st
+jj split
+jj log
+jj diff 
+jj diff --from w --to r
+clear
+zed .
+jj diff
+clear
+jj st
+jj diff --from w --to r
+jj diff
+jj desc
+ls
+cls
+ls
+jj st
+jj edit @-
+jj log
+jj edit r
+clear
+ls
+jj log
+jj splash
+clear
+jj squash
+jj st
+jj diff --from w --to r
+jj diff --from s --to w
+clear
+jj op log
+cls
+jj op log --limit 2
+jj op log --limit 2 --summary
+cls
+jj op show
+jj restore
+jj op restore
+clear
+ls
+jj st
+cl
+clear
+jj undo @
+jj undo
+clear
+jj log
+jj undo
+clear
+jj op restore @
+config nu
+zed $nu.env-path
+cls
+config nu
+zed $nu.env-path
+config nu
+cls
+mkdir ~/.config/nushell
+cls
+zed $nu.env-path
+winget install -e --id rsteube.Carapace
+winget ls
+z nushell
+ls
+z
+z ~/AppData/Roaming/nushell/
+zed completion.nu
+ls
+zed .
+$env.config | table -e | bat -p
+cls
