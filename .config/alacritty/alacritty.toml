@@ -8,6 +8,9 @@ size = 14
 [terminal]
 shell = { program = "/usr/bin/fish" }
 
+[cursor]
+style = { shape = "Beam" }
+
 [window]
 decorations = "None"
 dynamic_padding = true
