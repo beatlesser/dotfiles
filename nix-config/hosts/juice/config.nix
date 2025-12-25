@@ -17,7 +17,6 @@
   programs = {
     xwayland.enable = true;
     nix-ld.enable = true;
-    firefox.enable = true;
   };
   hardware.cpu.amd.updateMicrocode = config.hardware.enableRedistributableFirmware;
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
