@@ -8,11 +8,11 @@
         ESP = {
           label = "efi";
           type = "EF00";
-          size = "512M";
+          size = "1G";
           content = {
             type = "filesystem";
             format = "vfat";
-            mountpoint = "/efi";
+            mountpoint = "/boot";
             mountOptions = [
               "fmask=0022"
               "dmask=0022"
@@ -24,8 +24,6 @@
           content = {
             type = "btrfs";
             extraArgs = [
-              "-L"
-              "nixos"
               "-f"
             ];
             subvolumes = {
