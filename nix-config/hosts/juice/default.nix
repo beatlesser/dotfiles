@@ -10,9 +10,7 @@ let
   base-modules =
     mapToRoot [
       "secrets"
-      "common/base"
-      "common/nixos"
-      "common/services"
+      "common"
     ]
     ++ [
       ./config.nix
