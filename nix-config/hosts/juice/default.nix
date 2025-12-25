@@ -5,7 +5,7 @@ let
 
   system = "x86_64-linux";
 
-  host = "nixer";
+  host = "juice-laptop";
 
   base-modules =
     mapToRoot [

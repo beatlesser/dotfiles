@@ -1,5 +1,5 @@
 {
-  username = "cyer";
+  username = "beatlesser";
   email = "uuuuceny@gmail.com";
   shell = "fish";
   timeZone = "Asia/Shanghai";
