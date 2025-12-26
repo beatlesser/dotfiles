@@ -8,7 +8,6 @@
   environment.systemPackages = with pkgs; [
     sops
     age
-    ssh-to-age
   ];
   sops.defaultSopsFile = ../secrets.yaml;
   sops.age.sshKeyPaths = [ "/home/${myvars.username}/.ssh/id_ed25519" ];

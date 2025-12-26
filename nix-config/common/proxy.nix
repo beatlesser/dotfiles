@@ -41,28 +41,23 @@
           }
         }
       }
-
       group {
         proxy {
           #filter: name(keyword: HK, keyword: SG)
           policy: min_moving_avg
         }
       }
-
       # 更多的 Routing 样例见 https://github.com/daeuniverse/dae/blob/main/docs/en/configuration/routing.md
       routing {
         pname(NetworkManager) -> direct
         dip(224.0.0.0/3, 'ff00::/8') -> direct
-
         ### 以下为自定义规则
         dport(22) && domain(github.com) -> direct
-
         # 禁用 h3，因为它通常消耗很多 CPU 和内存资源
         l4proto(udp) && dport(443) -> block
         dip(geoip:private) -> direct
         dip(geoip:cn) -> direct
         domain(geosite:cn) -> direct
-
         fallback: proxy
       }
     '';

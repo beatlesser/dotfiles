@@ -20,7 +20,6 @@
       "ntp.aliyun.com" # Aliyun NTP Server
       "ntp.tencent.com" # Tencent NTP Server
     ];
-
     hosts = {
       # 本机基础配置
       "127.0.0.1" = [ "localhost" ];

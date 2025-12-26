@@ -4,9 +4,6 @@
   myvars,
   ...
 }:
-let
-  inherit (myvars) username;
-in
 {
   nix = {
     package = pkgs.lix;
@@ -47,11 +44,11 @@ in
       ];
       allowed-users = [
         "root"
-        "${username}"
+        "${myvars.username}"
       ];
       trusted-users = [
         "root"
-        "${username}"
+        "${myvars.username}"
       ];
     };
   };
