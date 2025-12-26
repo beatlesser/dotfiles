@@ -3,7 +3,6 @@
   fonts = {
     enableDefaultPackages = false;
     fontDir.enable = true;
-
     packages = with pkgs; [
       # icon fonts
       material-design-icons
@@ -31,7 +30,6 @@
       # https://github.com/subframe7536/maple-font
       maple-mono.NF-CN-unhinted
     ];
-
     fontconfig = {
       # User defined default fonts
       # https://catcat.cc/post/2021-03-07/
@@ -70,7 +68,6 @@
       };
     };
   };
-
   # https://wiki.archlinux.org/title/KMSCON
   services.kmscon = {
     # Use kmscon as the virtual console instead of gettys.

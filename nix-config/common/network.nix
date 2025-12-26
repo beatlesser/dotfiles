@@ -31,7 +31,6 @@
       ];
     };
   };
-
   # DNS 解析服务
   services.resolved = {
     enable = true;

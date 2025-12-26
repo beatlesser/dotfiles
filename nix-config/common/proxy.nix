@@ -6,7 +6,6 @@
     mode = "0600";
     source = config.sops.templates."config.dae".path;
   };
-
   sops.templates."config.dae" = {
     owner = "root";
     mode = "0600";
@@ -70,6 +69,6 @@
   };
   services.dae = {
     enable = true;
-    configFile = "/etc/dae/config";
+    configFile = "/etc/dae/config.dae";
   };
 }

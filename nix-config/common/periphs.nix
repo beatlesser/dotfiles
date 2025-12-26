@@ -1,13 +1,11 @@
 { pkgs, ... }:
 {
   #============================= Audio(PipeWire) =======================
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     pulseaudio # provides `pactl`, which is required by some apps(e.g. sonic-pi)
   ];
-
   # PipeWire is a new low-level multimedia framework.
   # It aims to offer capture and playback for both audio and video with minimal latency.
   # It support for PulseAudio-, JACK-, ALSA- and GStreamer-based applications.
@@ -27,9 +25,7 @@
   security.rtkit.enable = true;
   # Disable pulseaudio, it conflicts with pipewire too.
   #services.pulseaudio.enable = true;
-
   #============================= Bluetooth =============================
-
   # enable bluetooth & gui paring tools - blueman
   # or you can use cli:
   # $ bluetoothctl
@@ -44,13 +40,10 @@
   # [bluetooth] # trust [hex-address]
   hardware.bluetooth.enable = true;
   #services.blueman.enable = true;
-
   #================================= Misc =================================
-
   services = {
     printing.enable = true; # Enable CUPS to print documents.
     geoclue2.enable = true; # Enable geolocation services.
-
     udev.packages = with pkgs; [
       gnome-settings-daemon
       android-udev-rules # required by adb
@@ -58,7 +51,6 @@
       # openocd # required by paltformio, see https://github.com/NixOS/nixpkgs/issues/224895
       # openfpgaloader
     ];
-
     # A key remapping daemon for linux.
     # https://github.com/rvaiya/keyd
     keyd = {

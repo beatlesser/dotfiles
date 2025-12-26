@@ -31,7 +31,6 @@ in
       keep-going = true;
       warn-dirty = false;
       http-connections = 20;
-
       substituters = [
         "https://hyprland.cachix.org"
         "https://mirrors.ustc.edu.cn/nix-channels/store"

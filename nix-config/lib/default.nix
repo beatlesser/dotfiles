@@ -4,6 +4,6 @@ let
   nixosSystem = import ./nixosSystem.nix;
 in
 {
-  inherit (helper) mapToRoot relativeToRoot mkImports;
+  inherit (helper) mapToRoot relativeToRoot importAllFrom;
   inherit nixosSystem;
 }

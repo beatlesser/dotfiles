@@ -4,31 +4,22 @@
   myvars,
   ...
 }:
-let
-  inherit (myvars) username;
-in
 {
   environment.systemPackages = with pkgs; [
     sops
     age
     ssh-to-age
   ];
-
   sops.defaultSopsFile = ../secrets.yaml;
-  # This will automatically import SSH keys as age keys
-  sops.age.sshKeyPaths = [ "/home/${username}/.ssh/id_ed25519" ];
-  # This is using an age key that is expected to already be in the filesystem
-  sops.age.keyFile = "/home/${username}/.config/sops/age/keys.txt";
-  # This will generate a new key if the key specified above does not exist
+  sops.age.sshKeyPaths = [ "/home/${myvars.username}/.ssh/id_ed25519" ];
+  sops.age.keyFile = "/home/${myvars.username}/.config/sops/age/keys.txt";
   sops.age.generateKey = true;
-
-  # This is the actual specification of the secrets.
   sops.secrets."subscriptions/owo" = {
     owner = "root";
     mode = "0600";
   };
   #sops.secrets."cyer/pwd" = {
-    #owner = config.users.users.${username}.name;
+    #owner = config.users.users.${myvars.username}.name;
     #mode = "0600";
   #};
 }
