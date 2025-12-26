@@ -1,6 +1,6 @@
 {
   username = "beatlesser";
-  email = "uuuuceny@gmail.com";
+  email = "beatlesser@2925.com";
   shell = "fish";
   timeZone = "Asia/Shanghai";
   defaultLocale = "en_US.UTF-8";
