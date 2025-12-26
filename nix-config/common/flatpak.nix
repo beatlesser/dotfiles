@@ -43,8 +43,5 @@
       "com.tencent.WeChat"
       "com.qq.QQ"
     ];
-    overrides = {
-
-    };
   };
 }

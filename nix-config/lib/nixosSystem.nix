@@ -3,7 +3,7 @@
   lib,
   system,
   host,
-  base-modules,
+  custom-modules ? [ ],
   myvars,
   mylib,
   ...
@@ -39,5 +39,5 @@ let
 in
 lib.nixosSystem {
   inherit system specialArgs;
-  modules = shared-modules ++ base-modules
+  modules = shared-modules ++ custom-modules
 }

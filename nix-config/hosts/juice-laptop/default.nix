@@ -3,9 +3,9 @@ let
   inherit (mylib) mapToRoot nixosSystem;
   system = "x86_64-linux";
   host = "juice-laptop";
-  base-modules =
+  custom-modules =
     mapToRoot [
-      "secrets"
+      "secrets.nix"
       "common"
     ]
     ++ [
@@ -21,7 +21,7 @@ nixosSystem (
     inherit
       system
       host
-      base-modules
+      custom-modules
       ;
   }
 )

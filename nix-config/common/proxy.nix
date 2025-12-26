@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  environment.etc."dae/config" = {
+  environment.etc."dae/config.dae" = {
     user = "root";
     group = "dae";
     mode = "0600";
@@ -20,13 +20,10 @@
         allow_insecure: false
         auto_config_kernel_parameter: true
       }
-
       subscription {
         # 在下面填入你的订阅链接。
         owo: '${config.sops.placeholder."subscriptions/owo"}'
-        wow: '${config.sops.placeholder."subscriptions/wow"}'
       }
-
       # 更多的 DNS 样例见 https://github.com/daeuniverse/dae/blob/main/docs/en/configuration/dns.md
       dns {
         upstream {
@@ -71,7 +68,6 @@
       }
     '';
   };
-
   services.dae = {
     enable = true;
     configFile = "/etc/dae/config";

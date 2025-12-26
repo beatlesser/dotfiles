@@ -4,7 +4,7 @@ set positional-arguments
     just --list
 
 @install target:
-    nix --option substituters "https://mirrors.ustc.edu.cn" --experimental-features "nix-command flakes" run github:nix-community/disko -- -m disko -f .#{{ target }}
+    nix --substituters "https://mirrors.ustc.edu.cn" --experimental-features "nix-command flakes" run github:nix-community/disko -- -m disko -f .#{{ target }}
     nixos-install --flake .#{{ target }}
 
 @up *inputs:
@@ -19,7 +19,6 @@ set positional-arguments
 
 @gc:
     sudo nix-collect-garbage --delete-older-than 7d
-
     nix-collect-garbage --delete-older-than 7d
 
 repl:
@@ -31,7 +30,7 @@ repl:
 @dev env="dev":
     nix develop .#{{ env }}
 
-@switch host="nixer":
+@switch host="juice-laptop":
    sudo nixos-rebuild switch --flake .#{{ host }}
 
 @fix:

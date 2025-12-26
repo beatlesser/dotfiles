@@ -14,11 +14,7 @@ in
     ssh-to-age
   ];
 
-  # This will add secrets.yml to the nix store
-  # You can avoid this by adding a string to the full path instead, i.e.
-  # sops.defaultSopsFile = "/root/.sops/secrets/example.yaml";
-  # sops.defaultSopsFile = "/home/${username}/loneros-nixos/secrets/secrets.yaml";
-  sops.defaultSopsFile = ./secrets.yaml;
+  sops.defaultSopsFile = ../secrets.yaml;
   # This will automatically import SSH keys as age keys
   sops.age.sshKeyPaths = [ "/home/${username}/.ssh/id_ed25519" ];
   # This is using an age key that is expected to already be in the filesystem
@@ -31,14 +27,8 @@ in
     owner = "root";
     mode = "0600";
   };
-
-  sops.secrets."subscriptions/wow" = {
-    owner = "root";
-    mode = "0600";
-  };
-
-  sops.secrets."cyer/pwd" = {
-    owner = config.users.users.${username}.name;
-    mode = "0600";
-  };
+  #sops.secrets."cyer/pwd" = {
+    #owner = config.users.users.${username}.name;
+    #mode = "0600";
+  #};
 }
