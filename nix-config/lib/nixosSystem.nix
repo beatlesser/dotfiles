@@ -18,6 +18,7 @@ let
     nix-index-database
     nix-flatpak
     lanzaboote
+    hjem
     ;
   baseArgs = {
     inherit
@@ -35,6 +36,7 @@ let
     disko.nixosModules.default
     sops-nix.nixosModules.default
     lanzaboote.nixosModules.lanzaboote
+    hjem.nixosModules.default
   ];
 in
 lib.nixosSystem {
