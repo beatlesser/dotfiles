@@ -10,21 +10,17 @@
       #nerd font
       nerd-fonts.symbols-only # symbols icon only
       nerd-fonts.jetbrains-mono
-
       noto-fonts # 大部分文字的常见样式，不包含汉字
       noto-fonts-color-emoji # 彩色的表情符号字体
-
       # Adobe 以 Source Han Sans/Serif 的名称发布此系列字体
       source-sans # 无衬线字体，不含汉字。字族名叫 Source Sans 3，以及带字重的变体（VF）
       source-serif # 衬线字体，不含汉字。字族名叫 Source Serif 4，以及带字重的变体
       source-han-sans # 思源黑体
       source-han-serif # 思源宋体
       source-han-mono # 思源等宽
-
       # 霞鹜文楷 屏幕阅读版
       # https://github.com/lxgw/LxgwWenKai-Screen
       lxgw-wenkai-screen
-
       # Maple Mono NF CN (连字 未微调版，适用于高分辨率屏幕)
       # Full version, embed with nerdfonts icons, Chinese and Japanese glyphs
       # https://github.com/subframe7536/maple-font
