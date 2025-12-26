@@ -41,5 +41,5 @@ let
 in
 lib.nixosSystem {
   inherit system specialArgs;
-  modules = shared-modules ++ custom-modules
+  modules = shared-modules ++ custom-modules;
 }
