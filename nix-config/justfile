@@ -4,7 +4,7 @@ set positional-arguments
     just --list
 
 @install target:
-    nix --substituters "https://mirrors.ustc.edu.cn" --experimental-features "nix-command flakes" run github:nix-community/disko -- -m disko -f .#{{ target }}
+    nix --experimental-features "nix-command flakes" run github:nix-community/disko -- -m disko -f .#{{ target }}
     nixos-install --flake .#{{ target }}
 
 @up *inputs:
