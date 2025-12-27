@@ -1,9 +1,14 @@
 { lib, ... }:
 let
-  helper = import ./helper.nix { inherit lib; };
+  func = import ./func.nix { inherit lib; };
   nixosSystem = import ./nixosSystem.nix;
 in
 {
-  inherit (helper) mapToRoot relativeToRoot importAllFrom;
+  inherit (func)
+    mapToRoot
+    mapToConfig
+    relativeToRoot
+    importAllFrom
+    ;
   inherit nixosSystem;
 }

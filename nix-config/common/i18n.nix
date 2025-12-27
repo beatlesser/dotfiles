@@ -1,6 +1,7 @@
 {
   host,
   myvars,
+  pkgs,
   ...
 }:
 let

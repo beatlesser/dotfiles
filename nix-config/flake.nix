@@ -25,9 +25,7 @@
       ];
     in
     {
-      packages = forEachSystem (system: import ./pkgs legacyPackages.${system});
       formatter = forEachSystem (system: legacyPackages.${system}.nixfmt-tree);
-      overlays = import ./overlays { inherit inputs; };
       nixosConfigurations = mapAttrs (host: _: import ./hosts/${host} args) (builtins.readDir ./hosts);
     };
   inputs = {
@@ -54,6 +52,10 @@
     };
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/latest";

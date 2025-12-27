@@ -18,7 +18,7 @@
     mode = "0600";
   };
   #sops.secrets."cyer/pwd" = {
-    #owner = config.users.users.${myvars.username}.name;
-    #mode = "0600";
+  #owner = config.users.users.${myvars.username}.name;
+  #mode = "0600";
   #};
 }

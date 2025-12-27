@@ -12,6 +12,7 @@ in
   #helper func
   relativeToRoot = path.append ../.;
   mapToRoot = map (path.append ../.);
+  mapToConfig = path.append ../../.config;
   importAllFrom =
     dir:
     map (path: dir + "/${path}") (

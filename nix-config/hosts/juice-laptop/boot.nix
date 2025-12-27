@@ -18,8 +18,8 @@
       systemd-boot.enable = lib.mkForce true;
     };
     #lanzaboote = {
-      #enable = true;
-      #pkiBundle = "/var/lib/sbctl";
+    #enable = true;
+    #pkiBundle = "/var/lib/sbctl";
     #};
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [

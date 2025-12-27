@@ -1,4 +1,4 @@
-{ mylib, ... }@args:
+{ mylib, inputs, ... }@args:
 let
   inherit (mylib) mapToRoot nixosSystem;
   system = "x86_64-linux";
@@ -9,6 +9,7 @@ let
       "common"
     ]
     ++ [
+      inputs.noctalia.nixosModules.default
       ./config.nix
       ./boot.nix
       ./disk.nix
