@@ -6,9 +6,8 @@
   ...
 }:
 {
-  programs.niri.enable = true;
+  desktop.niri.enable = true;
   services = {
-    noctalia-shell.enable = true;
     displayManager.sddm.enable = true;
     desktopManager.plasma6.enable = true;
   };

@@ -24,7 +24,7 @@ in
       shellAliases = {
         cls = "clear";
         la = "lsd -ha";
-        ls = "lsd -hla";
+        ll = "lsd -hla";
         zz = "z -";
       };
     };
@@ -58,7 +58,6 @@ in
     };
     television = {
       enable = true;
-      enableFishIntegration = true;
     };
   };
   environment.systemPackages = with pkgs; [
