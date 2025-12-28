@@ -10,7 +10,6 @@ let
       "programs"
     ]
     ++ [
-      inputs.noctalia.nixosModules.default
       ./config.nix
       ./boot.nix
       ./disk.nix

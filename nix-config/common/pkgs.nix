@@ -18,6 +18,20 @@ in
     nano.enable = false;
     firefox.enable = true;
     bat.enable = true;
+    foot = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      theme = "catppuccin-mocha";
+      settings = {
+        main = {
+          font = "MapleMono NF CN:size=13";
+        };
+        cursor = {
+          style = "beam";
+        };
+      };
+    };
     fish = {
       enable = true;
       interactiveShellInit = "set fish_greeting";
@@ -54,6 +68,7 @@ in
     };
     zoxide = {
       enable = true;
+      enableBashIntegration = true;
       enableFishIntegration = true;
     };
     television = {

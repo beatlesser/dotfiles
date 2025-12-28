@@ -5,11 +5,18 @@
   ...
 }:
 {
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      extraArgs = "--keep 5 --keep-since 3d";
+    };
+  };
   nix = {
     package = pkgs.lix;
     nixPath = [ "nixpkgs=${nixpkgs}" ];
     gc = {
-      automatic = true;
+      automatic = false;
       dates = "weekly";
       options = "--delete-older-than 7d";
     };

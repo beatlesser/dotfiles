@@ -3,10 +3,15 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {
   config,
+  mylib,
   ...
 }:
 {
   desktop.niri.enable = true;
+  terminal.kitty = {
+    enable = true;
+    configPath = mylib.mapToConfig "kitty";
+  };
   services = {
     displayManager.sddm.enable = true;
     desktopManager.plasma6.enable = true;

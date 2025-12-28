@@ -1,14 +1,20 @@
 {
   host,
   myvars,
+  mylib,
   pkgs,
+  lib,
   ...
 }:
 let
   inherit (myvars)
+    username
     timeZone
     defaultLocale
     extraLocale
+    ;
+  inherit (mylib)
+    mapToConfig
     ;
 in
 {
@@ -74,5 +80,8 @@ in
         };
       };
     };
+  };
+  hjem.users.${username}.xdg.data.files."fcitx5/rime/default.custom.yaml" = {
+    source = mapToConfig "fcitx5/default.custom.yaml";
   };
 }

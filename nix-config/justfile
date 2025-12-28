@@ -5,23 +5,22 @@ set positional-arguments
 
 @install target:
     nix --experimental-features "nix-command flakes" run github:nix-community/disko -- -m disko -f .#{{ target }}
-    nixos-install --flake .#{{ target }}
+    nixos-install \
+        --option substituters "https://mirrors.ustc.edu.cn/nix-channels/store https://cache.garnix.io" \
+        --option trusted-public-keys "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" \
+        --flake .#{{ target }}
 
 @up *inputs:
     nix flake update {{ inputs }} --commit-lock-file
 
-@clean:
+@wipe:
     #Wipe out NixOS's history
     sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d
 
-    # Wipe out home-manager's history
-    nix profile wipe-history --profile "$XDG_STATE_HOME/nix/profiles/home-manager" --older-than 7d
-
 @gc:
-    sudo nix-collect-garbage --delete-older-than 7d
-    nix-collect-garbage --delete-older-than 7d
+    sudo nh clean all
 
-repl:
+@repl:
     nix repl -f flake:nixpkgs
 
 @shell *pkgs = "git neovim":
@@ -31,7 +30,7 @@ repl:
     nix develop .#{{ env }}
 
 @switch host="juice-laptop":
-   sudo nixos-rebuild switch --flake .#{{ host }}
+   nh os switch . -H {{ host }}
 
 @fix:
     nix-store --repair --verify # --check-contents
