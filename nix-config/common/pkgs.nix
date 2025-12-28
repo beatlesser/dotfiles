@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   system,
   myvars,
   mylib,
@@ -73,6 +74,8 @@ in
     };
     television = {
       enable = true;
+      enableFishIntegration = true;
+      package = pkgs-stable.television;
     };
   };
   environment.systemPackages = with pkgs; [

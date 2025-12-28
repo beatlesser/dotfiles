@@ -11,6 +11,7 @@
 let
   inherit (myvars) username;
   inherit (inputs)
+    nixpkgs-stable
     home-manager
     disko
     sops-nix
@@ -27,6 +28,10 @@ let
       myvars
       mylib
       ;
+    pkgs-stable = import nixpkgs-stable {
+      config.allowUnfree = true;
+      inherit system;
+    };
   };
   specialArgs = inputs // baseArgs;
   shared-modules = [
