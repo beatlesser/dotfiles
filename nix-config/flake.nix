@@ -1,10 +1,7 @@
 {
   description = "Beatlesser's Nix Flakes";
   outputs =
-    {
-      nixpkgs,
-      ...
-    }@inputs:
+    { nixpkgs, ... }@inputs:
     let
       inherit (nixpkgs) lib legacyPackages;
       inherit (lib) genAttrs mapAttrs;
@@ -53,10 +50,6 @@
     };
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/latest";

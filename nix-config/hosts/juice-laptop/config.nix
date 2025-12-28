@@ -1,17 +1,8 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
+{ config, ... }:
 {
-  config,
-  mylib,
-  ...
-}:
-{
-  desktop.niri.enable = true;
-  terminal.kitty = {
-    enable = true;
-    configPath = mylib.mapToConfig "kitty";
-  };
   services = {
     displayManager.sddm.enable = true;
     desktopManager.plasma6.enable = true;

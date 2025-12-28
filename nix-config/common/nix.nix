@@ -5,6 +5,11 @@
   ...
 }:
 {
+  nixpkgs = {
+    config.allowUnfree = true;
+    config.allowBroken = true;
+    hostPlatform = "${system}";
+  };
   programs.nh = {
     enable = true;
     clean = {

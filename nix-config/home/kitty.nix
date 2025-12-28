@@ -1,5 +1,4 @@
 {
-  myvars,
   lib,
   config,
   pkgs,
@@ -12,7 +11,6 @@ let
     mkPackageOption
     mkIf
     ;
-  inherit (myvars) username;
   cfg = config.terminal.kitty;
 in
 {
@@ -26,9 +24,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    hjem.users.${username} = {
-      packages = [ cfg.package ];
-      xdg.config.files."kitty".source = cfg.configPath;
-    };
+    packages = [ cfg.package ];
+    xdg.config.files."kitty".source = cfg.configPath;
   };
 }

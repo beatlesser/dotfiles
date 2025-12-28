@@ -1,4 +1,8 @@
-{ mylib, inputs, ... }@args:
+{
+  mylib,
+  inputs,
+  ...
+}@args:
 let
   inherit (mylib) mapToRoot nixosSystem;
   system = "x86_64-linux";
@@ -7,10 +11,11 @@ let
     mapToRoot [
       "secrets.nix"
       "common"
-      "programs"
+      "home"
     ]
     ++ [
       ./config.nix
+      ./home.nix
       ./boot.nix
       ./disk.nix
       ./optimization.nix
