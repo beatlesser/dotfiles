@@ -7,6 +7,7 @@ let
     mapToRoot [
       "secrets.nix"
       "common"
+      "programs"
     ]
     ++ [
       inputs.noctalia.nixosModules.default

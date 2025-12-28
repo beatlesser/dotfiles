@@ -6,8 +6,7 @@
   ...
 }:
 let
-  inherit (myvars) username;
-  inherit (mylib) mapToConfig;
+  inherit (myvars) username email;
 in
 {
   nixpkgs = {
@@ -15,23 +14,44 @@ in
     config.allowBroken = true;
     hostPlatform = "${system}";
   };
-  hjem.users.${username} = {
-    enable = true;
-    xdg.config.files = {
-      "niri".source = mapToConfig "niri";
-      "fish".source = mapToConfig "fish";
-      "nvim".source = mapToConfig "nvim";
-      "kitty".source = mapToConfig "kitty";
-      "starship.toml".source = mapToConfig "starship.toml";
-    };
-  };
   programs = {
     nano.enable = false;
-    git.enable = true;
     firefox.enable = true;
-    fish.enable = true;
-    starship.enable = true;
     bat.enable = true;
+    fish = {
+      enable = true;
+      interactiveShellInit = "set fish_greeting";
+      shellAliases = {
+        cls = "clear";
+        la = "lsd -ha";
+        ls = "lsd -hla";
+        zz = "z -";
+      };
+    };
+    git = {
+      enable = true;
+      config = {
+        user = {
+          name = "${username}";
+          email = "${email}";
+        };
+        alias = {
+          br = "branch";
+          sw = "switch";
+          rs = "reset";
+          rt = "restore";
+          st = "status";
+          df = "diff";
+          ls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
+          ll = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat";
+          cm = "commit -m";
+          ca = "commit -am";
+          caa = "commit --amend -a --no-edit";
+        };
+        init.defaultBranch = "main";
+        pull.rebase = true;
+      };
+    };
     zoxide = {
       enable = true;
       enableFishIntegration = true;
@@ -40,28 +60,19 @@ in
       enable = true;
       enableFishIntegration = true;
     };
-    foot = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-    neovim = {
-      enable = true;
-      viAlias = true;
-      defaultEditor = true;
-    };
   };
   environment.systemPackages = with pkgs; [
     gcc
-    kitty
     fastfetch
     just
-    tealdeer
     jujutsu
-    cliphist
-    wl-clipboard-rs
+    tealdeer
     btop
     fd
     ripgrep
     lsd
+    cliphist
+    wl-clipboard-rs
+    nix-search-tv
   ];
 }
