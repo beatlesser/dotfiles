@@ -1,19 +1,19 @@
 {
   host,
-  myvars,
-  mylib,
+  exvars,
+  exlib,
   pkgs,
   lib,
   ...
 }:
 let
-  inherit (myvars)
+  inherit (exvars)
     username
     timeZone
     defaultLocale
     extraLocale
     ;
-  inherit (mylib)
+  inherit (exlib)
     mapToConfig
     ;
 in

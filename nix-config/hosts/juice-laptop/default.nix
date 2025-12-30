@@ -1,25 +1,19 @@
 {
-  mylib,
+  exlib,
   inputs,
   ...
 }@args:
 let
-  inherit (mylib) mapToRoot nixosSystem;
+  inherit (exlib) nixosSystem;
   system = "x86_64-linux";
   host = "juice-laptop";
-  custom-modules =
-    mapToRoot [
-      "secrets.nix"
-      "common"
-      "home"
-    ]
-    ++ [
-      ./config.nix
-      ./home.nix
-      ./boot.nix
-      ./disk.nix
-      ./optimization.nix
-    ];
+  host-modules = [
+    ./config.nix
+    ./boot.nix
+    ./disk.nix
+    ./optimization.nix
+  ];
+  hjem-module = ./home.nix;
 in
 nixosSystem (
   args
@@ -27,7 +21,8 @@ nixosSystem (
     inherit
       system
       host
-      custom-modules
+      host-modules
+      hjem-module
       ;
   }
 )

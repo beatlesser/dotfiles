@@ -6,15 +6,15 @@
       inherit (nixpkgs) lib legacyPackages;
       inherit (lib) genAttrs mapAttrs;
       #import your vars and lib here
-      myvars = import ./vars.nix;
-      mylib = import ./lib { inherit lib; };
+      exvars = import ./vars.nix;
+      exlib = import ./lib { inherit lib; };
       #pass into your host config
       args = {
         inherit
           inputs
           lib
-          mylib
-          myvars
+          exlib
+          exvars
           ;
       };
       forEachSystem = genAttrs [
@@ -31,6 +31,11 @@
     hjem = {
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hjem-rum = {
+      url = "github:snugnug/hjem-rum";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hjem.follows = "hjem";
     };
     nur = {
       url = "github:nix-community/NUR";

@@ -1,8 +1,4 @@
-{
-  lib,
-  username,
-  ...
-}:
+{ lib, ... }:
 {
   services.flatpak = {
     enable = true;

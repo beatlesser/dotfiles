@@ -1,11 +1,11 @@
 {
   config,
   pkgs,
-  myvars,
+  exvars,
   ...
 }:
 let
-  inherit (myvars) username shell;
+  inherit (exvars) username shell;
 in
 {
   users = {

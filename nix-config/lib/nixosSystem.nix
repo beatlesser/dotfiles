@@ -3,16 +3,17 @@
   lib,
   system,
   host,
-  custom-modules ? [ ],
-  myvars,
-  mylib,
+  host-modules,
+  hjem-module ? { },
+  exvars,
+  exlib,
   ...
 }:
 let
-  inherit (myvars) username;
+  inherit (exvars) username;
+  inherit (exlib) relativeToRoot;
   inherit (inputs)
     nixpkgs-stable
-    home-manager
     disko
     sops-nix
     nur
@@ -20,21 +21,23 @@ let
     nix-flatpak
     lanzaboote
     hjem
+    hjem-rum
     ;
-  baseArgs = {
-    inherit
-      system
-      host
-      myvars
-      mylib
-      ;
+  sharedArgs = {
     pkgs-stable = import nixpkgs-stable {
       config.allowUnfree = true;
       inherit system;
     };
+    inherit
+      system
+      host
+      exvars
+      exlib
+      ;
   };
-  specialArgs = inputs // baseArgs;
-  shared-modules = [
+  specialArgs = inputs // sharedArgs;
+  base-modules = [
+    (relativeToRoot "common")
     nur.modules.nixos.default
     nix-flatpak.nixosModules.nix-flatpak
     nix-index-database.nixosModules.nix-index
@@ -43,8 +46,19 @@ let
     lanzaboote.nixosModules.lanzaboote
     hjem.nixosModules.default
   ];
+  hjemModuleWrapper = {
+    hjem = {
+      extraModules = [
+        (relativeToRoot "modules/hjem")
+        hjem-rum.hjemModules.default
+      ];
+      specialArgs = specialArgs;
+      users.${username} = hjem-module;
+      clobberByDefault = true;
+    };
+  };
 in
 lib.nixosSystem {
   inherit system specialArgs;
-  modules = shared-modules ++ custom-modules;
+  modules = base-modules ++ host-modules ++ lib.optional (hjem-module != { }) hjemModuleWrapper;
 }

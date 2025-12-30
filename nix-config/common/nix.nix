@@ -1,7 +1,8 @@
 {
   pkgs,
   nixpkgs,
-  myvars,
+  exvars,
+  system,
   ...
 }:
 {
@@ -56,11 +57,11 @@
       ];
       allowed-users = [
         "root"
-        "${myvars.username}"
+        "${exvars.username}"
       ];
       trusted-users = [
         "root"
-        "${myvars.username}"
+        "${exvars.username}"
       ];
     };
   };

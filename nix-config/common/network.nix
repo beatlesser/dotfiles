@@ -1,8 +1,6 @@
 {
   host,
-  myvars,
   lib,
-  config,
   ...
 }:
 {

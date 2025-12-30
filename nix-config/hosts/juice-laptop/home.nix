@@ -1,13 +1,11 @@
 {
-  myvars,
-  mylib,
+  exvars,
+  exlib,
   ...
 }:
 {
-  desktop.niri.enable = true;
-  terminal.kitty = {
+  rum.programs.kitty = {
     enable = true;
-    configPath = mylib.mapToConfig "kitty";
   };
   vcs.jujutsu.enable = true;
 }

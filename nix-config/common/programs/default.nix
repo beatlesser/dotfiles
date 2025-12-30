@@ -1,4 +1,4 @@
-{ mylib, ... }:
+{ exlib, ... }:
 {
-  imports = mylib.importAllFrom ./.;
+  imports = exlib.importAllFrom ./.;
 }
