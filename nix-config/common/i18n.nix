@@ -81,7 +81,4 @@ in
       };
     };
   };
-  hjem.users.${username}.xdg.data.files."fcitx5/rime/default.custom.yaml" = {
-    source = mapToConfig "fcitx5/default.custom.yaml";
-  };
 }

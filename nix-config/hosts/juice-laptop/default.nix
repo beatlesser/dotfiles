@@ -13,7 +13,7 @@ let
     ./disk.nix
     ./optimization.nix
   ];
-  hjem-module = ./home.nix;
+  hjem-module = ./hjem.nix;
 in
 nixosSystem (
   args
