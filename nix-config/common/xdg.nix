@@ -3,14 +3,13 @@
   pkgs,
   lib,
   ...
-}:
-let
+}: let
   defaultApps = {
-    browser = [ "firefox.desktop" ];
-    text = [ "neovim.desktop" ];
-    audio = [ "mpv.desktop" ];
-    video = [ "mpv.desktop" ];
-    image = [ "imv-dir.desktop" ];
+    browser = ["firefox.desktop"];
+    text = ["neovim.desktop"];
+    audio = ["mpv.desktop"];
+    video = ["mpv.desktop"];
+    image = ["imv-dir.desktop"];
   };
   mimeMap = {
     browser = [
@@ -56,8 +55,7 @@ let
       lib.mapAttrsToList (key: map (type: lib.nameValuePair type defaultApps.${key})) mimeMap
     )
   );
-in
-{
+in {
   xdg = {
     mime = {
       enable = true;

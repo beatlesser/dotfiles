@@ -1,19 +1,17 @@
-{ lib, ... }:
-let
-  inherit (builtins)
+{lib, ...}: let
+  inherit
+    (builtins)
     map
     attrNames
     mapAttrs
     readDir
     ;
   inherit (lib) filterAttrs strings path;
-in
-{
+in {
   #helper func
   relativeToRoot = path.append ../.;
   mapToConfig = path.append ../../.config;
-  importAllFrom =
-    dir:
+  importAllFrom = dir:
     map (path: dir + "/${path}") (
       attrNames (
         filterAttrs (

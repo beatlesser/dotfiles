@@ -4,8 +4,7 @@
   exvars,
   system,
   ...
-}:
-{
+}: {
   nixpkgs = {
     config.allowUnfree = true;
     config.allowBroken = true;
@@ -20,7 +19,7 @@
   };
   nix = {
     package = pkgs.lix;
-    nixPath = [ "nixpkgs=${nixpkgs}" ];
+    nixPath = ["nixpkgs=${nixpkgs}"];
     gc = {
       automatic = false;
       dates = "weekly";
@@ -28,7 +27,7 @@
     };
     optimise = {
       automatic = true;
-      dates = [ "weekly" ];
+      dates = ["weekly"];
     };
     channel.enable = false;
     settings = {

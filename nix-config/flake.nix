@@ -1,30 +1,27 @@
 {
   description = "Beatlesser's Nix Flakes";
-  outputs =
-    { nixpkgs, ... }@inputs:
-    let
-      inherit (nixpkgs) lib legacyPackages;
-      inherit (lib) genAttrs mapAttrs;
-      #import your vars and lib here
-      exvars = import ./vars.nix;
-      exlib = import ./lib { inherit lib; };
-      #pass into your host config
-      args = {
-        inherit
-          inputs
-          lib
-          exlib
-          exvars
-          ;
-      };
-      forEachSystem = genAttrs [
-        "x86_64-linux"
-      ];
-    in
-    {
-      formatter = forEachSystem (system: legacyPackages.${system}.nixfmt-tree);
-      nixosConfigurations = mapAttrs (host: _: import ./hosts/${host} args) (builtins.readDir ./hosts);
+  outputs = {nixpkgs, ...} @ inputs: let
+    inherit (nixpkgs) lib legacyPackages;
+    inherit (lib) genAttrs mapAttrs;
+    #import your vars and lib here
+    exvars = import ./vars.nix;
+    exlib = import ./lib {inherit lib;};
+    #pass into your host config
+    args = {
+      inherit
+        inputs
+        lib
+        exlib
+        exvars
+        ;
     };
+    forEachSystem = genAttrs [
+      "x86_64-linux"
+    ];
+  in {
+    formatter = forEachSystem (system: legacyPackages.${system}.alejandra);
+    nixosConfigurations = mapAttrs (host: _: import ./hosts/${host} args) (builtins.readDir ./hosts);
+  };
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";

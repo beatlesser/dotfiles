@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{config, ...}: {
   environment.etc."dae/config.dae" = {
     user = "root";
     group = "dae";

@@ -1,5 +1,4 @@
-{ lib, ... }:
-{
+{lib, ...}: {
   boot = {
     initrd = {
       availableKernelModules = [
@@ -11,7 +10,7 @@
         "sd_mod"
         "btrfs"
       ];
-      kernelModules = [ ];
+      kernelModules = [];
     };
     loader = {
       efi.canTouchEfiVariables = true;

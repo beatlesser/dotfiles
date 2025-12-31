@@ -75,13 +75,13 @@
     parameters = {
       hotkey-overlay-title = "Open a Main Terminal";
     };
-    spawn = [ "kitty" ];
+    spawn = ["kitty"];
   };
   "Mod+Apostrophe" = {
     parameters = {
       hotkey-overlay-title = "Open a backup Terminal";
     };
-    spawn = [ "foot" ];
+    spawn = ["foot"];
   };
   "Mod+O" = {
     parameters = {

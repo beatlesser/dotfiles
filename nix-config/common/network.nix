@@ -2,8 +2,7 @@
   host,
   lib,
   ...
-}:
-{
+}: {
   #networking config
   networking = {
     hostName = "${host}";
@@ -20,8 +19,8 @@
     ];
     hosts = {
       # 本机基础配置
-      "127.0.0.1" = [ "localhost" ];
-      "::1" = [ "localhost" ];
+      "127.0.0.1" = ["localhost"];
+      "::1" = ["localhost"];
       # 黑名单域名
       "0.0.0.0" = [
         "qqpatch.gtimg.cn" # 阻止 QQ 自动更新

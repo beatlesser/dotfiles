@@ -1,4 +1,3 @@
-{ ... }:
-{
+{...}: {
   vcs.jujutsu.enable = true;
 }

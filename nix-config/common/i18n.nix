@@ -5,19 +5,19 @@
   pkgs,
   lib,
   ...
-}:
-let
-  inherit (exvars)
+}: let
+  inherit
+    (exvars)
     username
     timeZone
     defaultLocale
     extraLocale
     ;
-  inherit (exlib)
+  inherit
+    (exlib)
     mapToConfig
     ;
-in
-{
+in {
   time = {
     timeZone = "${timeZone}";
     hardwareClockInLocalTime = true;

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   fonts = {
     enableDefaultPackages = false;
     fontDir.enable = true;
@@ -55,7 +54,7 @@
           # 西文
           "JetBrainsMono Nerd Font"
         ];
-        emoji = [ "Noto Color Emoji" ];
+        emoji = ["Noto Color Emoji"];
       };
       antialias = true; # 抗锯齿
       hinting.enable = false; # 禁止字体微调 - 高分辨率下没这必要

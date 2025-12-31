@@ -3,8 +3,7 @@
   system,
   lib,
   ...
-}:
-{
+}: {
   programs = {
     nano.enable = false;
     firefox.enable = true;
@@ -25,7 +24,10 @@
     };
     fish = {
       enable = true;
-      interactiveShellInit = "set fish_greeting";
+      interactiveShellInit = ''
+        set fish_greeting
+        fish_vi_key_bindings
+      '';
       shellAliases = {
         cls = "clear";
         ls = "lsd";

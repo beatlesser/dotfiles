@@ -3,11 +3,9 @@
   pkgs,
   exvars,
   ...
-}:
-let
+}: let
   inherit (exvars) username shell;
-in
-{
+in {
   users = {
     mutableUsers = true;
     defaultUserShell = pkgs.${shell};

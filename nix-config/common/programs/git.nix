@@ -1,8 +1,6 @@
-{ exvars, ... }:
-let
+{exvars, ...}: let
   inherit (exvars) username email;
-in
-{
+in {
   programs.git = {
     enable = true;
     config = {

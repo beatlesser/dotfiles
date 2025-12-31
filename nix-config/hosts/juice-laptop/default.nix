@@ -2,8 +2,7 @@
   exlib,
   inputs,
   ...
-}@args:
-let
+} @ args: let
   inherit (exlib) nixosSystem relativeToRoot;
   system = "x86_64-linux";
   host = "juice-laptop";
@@ -17,14 +16,14 @@ let
     (relativeToRoot "hjem")
   ];
 in
-nixosSystem (
-  args
-  // {
-    inherit
-      system
-      host
-      host-modules
-      hjem-modules
-      ;
-  }
-)
+  nixosSystem (
+    args
+    // {
+      inherit
+        system
+        host
+        host-modules
+        hjem-modules
+        ;
+    }
+  )

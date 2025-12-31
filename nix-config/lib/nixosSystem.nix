@@ -4,15 +4,15 @@
   system,
   host,
   host-modules,
-  hjem-modules ? [ ],
+  hjem-modules ? [],
   exvars,
   exlib,
   ...
-}:
-let
+}: let
   inherit (exvars) username;
   inherit (exlib) relativeToRoot;
-  inherit (inputs)
+  inherit
+    (inputs)
     nixpkgs-stable
     disko
     sops-nix
@@ -58,7 +58,7 @@ let
     };
   };
 in
-lib.nixosSystem {
-  inherit system specialArgs;
-  modules = base-modules ++ host-modules ++ lib.optional (hjem-modules != [ ]) hjemModulesWrapper;
-}
+  lib.nixosSystem {
+    inherit system specialArgs;
+    modules = base-modules ++ host-modules ++ lib.optional (hjem-modules != []) hjemModulesWrapper;
+  }
