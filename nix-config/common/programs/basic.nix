@@ -43,7 +43,7 @@
     };
     television = {
       enable = true;
-      #enableFishIntegration = true;
+      enableFishIntegration = true;
     };
   };
   environment.systemPackages = with pkgs; [
