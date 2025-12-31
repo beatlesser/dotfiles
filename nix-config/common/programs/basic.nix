@@ -57,6 +57,5 @@
     lsd
     cliphist
     wl-clipboard-rs
-    nix-search-tv
   ];
 }

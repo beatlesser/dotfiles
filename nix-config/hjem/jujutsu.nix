@@ -1,3 +1,8 @@
 {...}: {
-  vcs.jujutsu.enable = true;
+  dots.programs.jujutsu = {
+    enable = true;
+    settings = {
+      ui.default-command = ["log"];
+    };
+  };
 }

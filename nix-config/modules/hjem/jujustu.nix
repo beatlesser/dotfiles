@@ -12,9 +12,9 @@
     mkIf
     ;
   tomlFormat = pkgs.formats.toml {};
-  cfg = config.vcs.jujutsu;
+  cfg = config.dots.programs.jujutsu;
 in {
-  options.vcs.jujutsu = {
+  options.dots.programs.jujutsu = {
     enable = mkEnableOption "jujutsu";
     package = mkPackageOption pkgs "jujutsu" {};
     settings = mkOption {
