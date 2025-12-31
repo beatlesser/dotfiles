@@ -28,6 +28,7 @@
       interactiveShellInit = "set fish_greeting";
       shellAliases = {
         cls = "clear";
+        ls = "lsd";
         la = "lsd -ha";
         ll = "lsd -hla";
         zz = "z -";

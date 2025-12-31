@@ -1,15 +1,7 @@
+{ pkgs, ... }:
 {
-  exvars,
-  exlib,
-  pkgs,
-  ...
-}:
-{
-  rum.programs.kitty = {
-    enable = true;
-  };
-  vcs.jujutsu.enable = true;
   xdg.data.files."fcitx5/rime/default.custom.yaml" = {
+    type = "copy";
     generator = (pkgs.formats.yaml { }).generate "default.custom.yaml";
     value = {
       patch = {

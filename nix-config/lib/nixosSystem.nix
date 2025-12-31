@@ -4,7 +4,7 @@
   system,
   host,
   host-modules,
-  hjem-module ? { },
+  hjem-modules ? [ ],
   exvars,
   exlib,
   ...
@@ -46,19 +46,19 @@ let
     lanzaboote.nixosModules.lanzaboote
     hjem.nixosModules.default
   ];
-  hjemModuleWrapper = {
+  hjemModulesWrapper = {
     hjem = {
       extraModules = [
         (relativeToRoot "modules/hjem")
         hjem-rum.hjemModules.default
       ];
       specialArgs = specialArgs;
-      users.${username} = hjem-module;
+      users.${username}.imports = hjem-modules;
       clobberByDefault = true;
     };
   };
 in
 lib.nixosSystem {
   inherit system specialArgs;
-  modules = base-modules ++ host-modules ++ lib.optional (hjem-module != { }) hjemModuleWrapper;
+  modules = base-modules ++ host-modules ++ lib.optional (hjem-modules != [ ]) hjemModulesWrapper;
 }

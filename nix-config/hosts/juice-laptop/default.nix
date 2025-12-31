@@ -4,7 +4,7 @@
   ...
 }@args:
 let
-  inherit (exlib) nixosSystem;
+  inherit (exlib) nixosSystem relativeToRoot;
   system = "x86_64-linux";
   host = "juice-laptop";
   host-modules = [
@@ -13,7 +13,9 @@ let
     ./disk.nix
     ./optimization.nix
   ];
-  hjem-module = ./hjem.nix;
+  hjem-modules = [
+    (relativeToRoot "hjem")
+  ];
 in
 nixosSystem (
   args
@@ -22,7 +24,7 @@ nixosSystem (
       system
       host
       host-modules
-      hjem-module
+      hjem-modules
       ;
   }
 )
