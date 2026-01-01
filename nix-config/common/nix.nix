@@ -5,18 +5,6 @@
   system,
   ...
 }: {
-  nixpkgs = {
-    config.allowUnfree = true;
-    config.allowBroken = true;
-    hostPlatform = "${system}";
-  };
-  programs.nh = {
-    enable = true;
-    clean = {
-      enable = true;
-      extraArgs = "--keep 5 --keep-since 3d";
-    };
-  };
   nix = {
     package = pkgs.lix;
     nixPath = ["nixpkgs=${nixpkgs}"];
@@ -62,6 +50,13 @@
         "root"
         "${exvars.username}"
       ];
+    };
+  };
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      extraArgs = "--keep 5 --keep-since 3d";
     };
   };
 }

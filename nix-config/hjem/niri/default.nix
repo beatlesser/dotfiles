@@ -1,13 +1,18 @@
 {
-  exlib,
   pkgs,
+  lib,
+  noctalia,
   ...
 }: {
-  packages = [
-    pkgs.noctalia-shell
-  ];
+  packages = [noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default];
   rum.desktops.niri = {
     enable = true;
-    binds = import ./binds.nix;
+    config = lib.concatMapStringsSep "\n" builtins.readFile [
+      ./config.kdl
+      ./binds.kdl
+      ./window-rules.kdl
+      ./spawn-at-startup.kdl
+      ./environment.kdl
+    ];
   };
 }
