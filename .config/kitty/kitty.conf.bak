@@ -52,9 +52,3 @@ include keymap.conf
 # mark3_background #1E1E2E
 toggle_marker regex 1 \\bINFO\\b 2 \\bWARNING\\b 3 \\bERROR\\b 3 \\bFATAL\\b
 map ctrl+shift+m toggle_marker regex 1 \\bINFO\\b 2 \\bWARNING\\b 3 \\bERROR\\b 3 \\bFATAL\\b
-
-
-# BEGIN_KITTY_THEME
-# Noctalia
-include current-theme.conf
-# END_KITTY_THEME
