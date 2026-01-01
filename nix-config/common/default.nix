@@ -1,3 +1,0 @@
-{exlib, ...}: {
-  imports = exlib.importAllFrom ./.;
-}
