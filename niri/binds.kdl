@@ -33,8 +33,8 @@ binds {
     Mod+Semicolon hotkey-overlay-title="Open a Terminal" {
         spawn "kitty"
     }
-    Mod+Apostrophe hotkey-overlay-title="Open Browser" {
-        spawn "firefox"
+    Mod+Apostrophe hotkey-overlay-title="Open another Terminal" {
+        spawn "foot"
     }
     Mod+O repeat=false {
         toggle-overview
