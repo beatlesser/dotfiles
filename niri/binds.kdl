@@ -52,10 +52,10 @@ binds {
         expand-column-to-available-width
     }
     Mod+F {
-        fullscreen-window
+        maximize-column
     }
     Mod+Ctrl+F {
-        maximize-column
+        fullscreen-window
     }
     Mod+H {
         focus-column-left
