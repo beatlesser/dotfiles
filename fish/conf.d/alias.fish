@@ -1,5 +1,6 @@
 #! /usr/bin/env fish
 alias cls 'clear'
+alias lns 'ln -sfnT'
 
 [ -n $(command -v nvim) ] && alias vi 'nvim'
 
