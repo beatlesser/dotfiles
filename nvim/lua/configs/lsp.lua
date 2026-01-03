@@ -3,6 +3,9 @@ local LspConfig = {}
 function LspConfig.apply()
 	local lsp_list = {
 		"lua_ls",
+		"rust_analyzer",
+		"ty",
+		"pyrefly",
 		"biome",
 		"ts_ls",
 		"gopls",
