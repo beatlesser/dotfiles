@@ -1,0 +1,5 @@
+[user]
+name = "beatlesser"
+email = "beatlesser@2925.com"
+[ui]
+default-command = ["log"]
