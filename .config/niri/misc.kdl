@@ -1,0 +1,68 @@
+input {
+    mod-key "Alt"
+    mod-key-nested "Super"
+    keyboard {
+        xkb {
+
+        }
+    }
+    touchpad {
+        natural-scroll
+    }
+    mouse {
+
+    }
+    trackpoint {
+
+    }
+}
+output "HDMI-A-1" {
+    mode "1920x1080@180.000"
+    scale 1.0
+}
+output "eDP-1" {
+    // Uncomment this line to disable this output.
+    off
+}
+layout {
+    gaps 16
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    default-column-width {
+        proportion 0.5
+    }
+    focus-ring {
+        width 2
+        active-color "#b4befe"
+        inactive-color "#505050"
+    }
+    border {
+        off
+        width 2
+        active-color "#ff4477ff"
+        inactive-color "#ff2f343f"
+        urgent-color "#9b0000"
+    }
+    shadow {
+        on
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+    struts {
+    }
+}
+hotkey-overlay {
+    skip-at-startup
+}
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+animations {
+}
+debug {
+  honor-xdg-activation-with-invalid-serial
+}

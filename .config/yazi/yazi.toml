@@ -1,0 +1,5 @@
+[mgr]
+show_symlink = true
+
+[opener]
+edit = [{ run = '$EDITOR "$@"', block = true, for = "unix" }]

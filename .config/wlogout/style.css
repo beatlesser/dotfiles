@@ -1,0 +1,60 @@
+/** ********** Fonts ********** **/
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: none;
+}
+
+/** ********** Main Window ********** **/
+window {
+  background-color: #181825;
+}
+
+/** ********** Buttons ********** **/
+button {
+  background-color: #1e1e2e;
+  margin: 5px 10px;
+  color: #cdd6f4;
+  border-color: transparent;
+  outline-style: none;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 36%;
+}
+
+button:focus,
+button:active,
+button:hover {
+  background-color: #313244;
+  outline-style: none;
+}
+
+/** ********** Icons ********** **/
+#lock {
+  background-image: image(url("icons/lock.png"), url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+  background-image: image(url("icons/logout.png"), url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+  background-image: image(url("icons/suspend.png"), url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+  background-image: image(
+    url("icons/hibernate.png"),
+    url("/usr/share/wlogout/icons/hibernate.png")
+  );
+}
+
+#shutdown {
+  background-image: image(url("icons/shutdown.png"), url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+  background-image: image(url("icons/reboot.png"), url("/usr/share/wlogout/icons/reboot.png"));
+}
