@@ -1,10 +1,10 @@
 local lsp_list = {
 	"lua_ls",
 	"ty",
-	"zls",
 	"gopls",
 	"rust_analyzer",
-	"oxlint",
+	"zls",
+	"tsgo",
 	"bashls",
 	"markdown_oxide",
 }

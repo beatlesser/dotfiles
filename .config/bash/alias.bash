@@ -7,4 +7,8 @@ if [[ -x $(command -v eza) ]] ; then
     alias l='eza --long --all --icons=always'
 fi
 
+[[ -x $(command -v yazi) ]] && alias yz='yazi'
+
 alias vi='nvim'
+alias lns='ls -sfnT'
+alias zz='z -'

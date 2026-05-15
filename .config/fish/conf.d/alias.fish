@@ -12,3 +12,4 @@ if [ -n $(command -v eza) ]
 end
 
 [ -n $(command -v zoxide) ] && alias zz 'z -'
+[ -n $(command -v yazi) ] && alias yz 'yazi'

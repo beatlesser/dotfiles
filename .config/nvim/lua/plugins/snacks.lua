@@ -28,7 +28,7 @@ return {
 				},
 			},
 		},
-		notifier = { enabled = true, timeout = 2000 },
+		notifier = { enabled = true },
 		picker = {},
 		image = { doc = { enabled = false } },
 	},
