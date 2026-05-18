@@ -8,6 +8,7 @@ return {
 			rust = { "rustfmt", lsp_format = "fallback" },
 			zig = { "zigfmt" },
 			python = { "ruff" },
+			typst = { "prettypst" },
 		},
 		format_on_save = {
 			timeout_ms = 500,

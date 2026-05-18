@@ -6,6 +6,7 @@ local lsp_list = {
 	"zls",
 	"tsgo",
 	"bashls",
+	"tinymist",
 	"markdown_oxide",
 }
 
