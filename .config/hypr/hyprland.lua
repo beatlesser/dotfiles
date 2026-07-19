@@ -1,0 +1,7 @@
+require("devices")
+require("appearance")
+require("misc")
+require("binds")
+require("env")
+require("rules")
+require("autostart")
