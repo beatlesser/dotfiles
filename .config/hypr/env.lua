@@ -1,0 +1,8 @@
+hl.env("XMODIFIERS", "@im=fcitx")
+hl.env("QT_IM_MODULES", "wayland;fcitx")
+hl.env("GTK_IM_MODULES", "wayland;fcitx")
+hl.env("INPUT_METHOD", "fcitx")
+hl.env("SDL_IM_MODULE", "fcitx")
+hl.env("LANG", "zh_CN.UTF-8")
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
+hl.env("HYPRCURSOR_SIZE", "24")
