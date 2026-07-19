@@ -1,0 +1,11 @@
+# font
+font-family = JetBrainsMono Nerd Font
+font-size = 14
+# appearance
+theme = Catppuccin Mocha
+background-opacity = 0.7
+cursor-style = bar
+window-theme = ghostty
+window-decoration = auto
+window-padding-x = 3
+window-padding-y = 3
