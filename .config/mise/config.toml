@@ -1,0 +1,24 @@
+[tools]
+go = "latest"
+zig = "latest"
+
+[settings]
+dotfiles.root = "~/dotfiles"
+dotfiles.default_mode = "symlink"
+
+[bootstrap.packages]
+"pacman:btop" = "latest"
+"pacman:yazi" = "latest"
+"pacman:hyprland" = "latest"
+"pacman:foot" = "latest"
+
+[bootstrap.repos]
+"~/dotfiles" = { url = "git@github.com:beatlesser/dotfiles.git", ref = "main" }
+
+[dotfiles]
+"~/.config/fontconfig" = {}
+"~/.config/foot" = {}
+"~/.config/hypr" = {}
+"~/.config/nvim" = {}
+"~/.config/yazi" = {}
+"~/.config/btop" = {}
