@@ -1,0 +1,8 @@
+**/result-*
+**/result
+**/history.txt
+.config/fish/fish_variables
+.config/television/cable
+.config/tmux/plugins
+.config/noctalia/plugins
+.config/noctalia/pam

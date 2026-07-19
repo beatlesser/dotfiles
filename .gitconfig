@@ -1,0 +1,31 @@
+[user]
+    name = "beatlesser"
+    email = "beatlesser@2925.com"
+
+[core]
+    pager = delta
+    editor = nvim
+
+[delta]
+    diff-so-fancy = true
+    line-numbers = true
+    true-color = "always"
+
+[alias]
+    br = "branch"
+    sw = "switch"
+    rst = "restore"
+    rv = "revert"
+    rs = "reset"
+    st = "status"
+    df = "diff"
+    cm = "commit -m"
+    ca = "commit -am"
+    caa = "commit --all --amend --no-edit"
+
+
+[init]
+    defaultBranch = "main"
+
+[pull]
+    rebase = true
