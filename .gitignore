@@ -1,0 +1,7 @@
+**/result-*
+**/result
+**/history.txt
+.config/fish/fish_variables
+.config/tmux/plugins
+.config/noctalia/plugins
+.config/noctalia/pam

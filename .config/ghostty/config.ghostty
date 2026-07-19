@@ -1,0 +1,23 @@
+# cursor
+cursor-style = bar
+# font
+font-family = IoskeleyMono Nerd Font
+font-size = 14
+# IoskeleyMono-specific
+adjust-underline-position = 2
+
+# theme
+theme = noctalia
+
+# background
+background-opacity = 0.7
+
+# window
+window-decoration = none
+window-theme = ghostty
+window-padding-x = 2
+window-padding-y = 2
+window-padding-balance = true
+
+command = /usr/bin/bash
+confirm-close-surface = false
